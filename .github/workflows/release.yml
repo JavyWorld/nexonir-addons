@@ -1,0 +1,67 @@
+name: Package and Release Addons
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
+
+      - name: Package Guild_Roster_Manager
+        run: |
+          cd Guild_Roster_Manager
+          zip -r ../Guild_Roster_Manager-${{ github.ref_name }}.zip .
+          cd ..
+
+      - name: Package GuildActivityTracker
+        run: |
+          cd GuildActivityTracker
+          zip -r ../GuildActivityTracker-${{ github.ref_name }}.zip .
+          cd ..
+
+      - name: Package combined (both addons)
+        run: |
+          mkdir -p _combined/Guild_Roster_Manager
+          mkdir -p _combined/GuildActivityTracker
+          cp -r Guild_Roster_Manager/* _combined/Guild_Roster_Manager/
+          cp -r GuildActivityTracker/* _combined/GuildActivityTracker/
+          cd _combined
+          zip -r ../nexonir-addons-${{ github.ref_name }}.zip .
+          cd ..
+          rm -rf _combined
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Nexonir Addons ${{ github.ref_name }}"
+          body: |
+            ## Nexonir WoW Addons ${{ github.ref_name }}
+
+            ### Archivos incluidos
+            - **Guild_Roster_Manager-${{ github.ref_name }}.zip** — Addon GRM (solo)
+            - **GuildActivityTracker-${{ github.ref_name }}.zip** — Addon GAT (solo)
+            - **nexonir-addons-${{ github.ref_name }}.zip** — Ambos addons combinados
+
+            ### Instalación
+            1. Descarga `nexonir-addons-${{ github.ref_name }}.zip`
+            2. Extrae en `World of Warcraft\_retail_\Interface\AddOns\`
+            3. Reinicia WoW o escribe `/reload`
+
+            O usa **App Nexo** para actualización automática.
+          files: |
+            Guild_Roster_Manager-${{ github.ref_name }}.zip
+            GuildActivityTracker-${{ github.ref_name }}.zip
+            nexonir-addons-${{ github.ref_name }}.zip
+          draft: false
+          prerelease: false
