@@ -1,9 +1,0 @@
-## Interface: 110100
-## Title: Guild Activity Tracker
-## Notes: Trackea actividad adicional de la guild para Nexonir.com
-## Author: Nexonir
-## Version: 1.0.0
-## SavedVariables: GuildActivityTracker
-## DefaultState: Enabled
-
-GuildActivityTracker.lua
