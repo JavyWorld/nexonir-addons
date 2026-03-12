@@ -1,3 +1,0 @@
--- GuildActivityTracker
--- Placeholder: replace with actual addon files
--- Version: 1.0.0
