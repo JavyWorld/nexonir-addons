@@ -1,0 +1,2182 @@
+﻿# Inventario Completo de Funciones - Guild Roster Manager
+
+Generado automaticamente desde los archivos Lua del addon.
+
+## Resumen
+
+- Total de funciones detectadas en addon principal: 1760
+- Total de funciones detectadas en sub-addon GuildActivityTracker: 145
+- Total combinado: 1905
+
+## Recuento por archivo (Addon principal)
+
+- Danish.lua: 1
+- Dutch.lua: 1
+- English.lua: 1
+- French.lua: 1
+- German.lua: 1
+- GRM_ActivityMetrics.lua: 23
+- GRM_AltManagement.lua: 46
+- GRM_AltsImport.lua: 4
+- GRM_API.lua: 19
+- grm_chattynator.lua: 11
+- GRM_ClassicFrames.lua: 1
+- GRM_Config.lua: 2
+- GRM_Core.lua: 556
+- GRM_Debug.lua: 4
+- GRM_EE.lua: 2
+- GRM_Export.lua: 29
+- GRM_G_Util.lua: 10
+- GRM_GuildSync.lua: 172
+- GRM_HC.lua: 10
+- GRM_Hyperlinks.lua: 3
+- GRM_Localization.lua: 8
+- GRM_Log.lua: 19
+- GRM_Macro_Tool.lua: 214
+- GRM_Minimap.lua: 13
+- GRM_Modules.lua: 2
+- GRM_Nicknames.lua: 6
+- GRM_Patches.lua: 244
+- GRM_Professions.lua: 12
+- GRM_Realms.lua: 1
+- GRM_Roster.lua: 62
+- GRM_SaveVar_API.lua: 14
+- GRM_ScanRoster.lua: 55
+- GRM_Stats.lua: 5
+- GRM_TimeUtil.lua: 30
+- GRM_UI.lua: 140
+- GRM_UI_API.lua: 21
+- GRM_UI_Precheck.lua: 2
+- GRM_Util.lua: 5
+- GRM_WebApps.lua: 1
+- Italian.lua: 1
+- Korean.lua: 1
+- MandarinCN.lua: 1
+- MandarinTW.lua: 1
+- Portuguese.lua: 1
+- PortugueseBR.lua: 1
+- Russian.lua: 1
+- SpanishEU.lua: 1
+- SpanishMX.lua: 1
+
+## Recuento por archivo (GuildActivityTracker)
+
+- activity.lua: 12
+- core.lua: 9
+- data.lua: 21
+- events.lua: 5
+- export.lua: 3
+- filters_ui.lua: 2
+- graph.lua: 2
+- master.lua: 11
+- minimap.lua: 3
+- options.lua: 3
+- rank_presence.lua: 8
+- stats.lua: 4
+- sync.lua: 54
+- trends.lua: 2
+- ui.lua: 3
+- utils.lua: 3
+
+## Funciones por archivo (Addon principal)
+
+### Danish.lua
+
+- L28 [assigned function] `GRML.Danish`
+
+### Dutch.lua
+
+- L28 [assigned function] `GRML.Dutch`
+
+### English.lua
+
+- L26 [assigned function] `GRML.English`
+
+### French.lua
+
+- L25 [assigned function] `GRML.French`
+
+### German.lua
+
+- L28 [assigned function] `GRML.German`
+
+### GRM_ActivityMetrics.lua
+
+- L14 [local function] `NormalizeRealmName`
+- L19 [local function] `GetCurrentRealmName`
+- L26 [local function] `GetGuildStorageKey`
+- L42 [local function] `CanonicalizeName`
+- L71 [local function] `DateKeyToEpoch`
+- L91 [local function] `PruneDailyMap`
+- L105 [local function] `SumRecentValues`
+- L122 [local function] `EnsureDailyHourMarks`
+- L129 [local function] `MarkHourlyPresence`
+- L147 [local function] `CountActiveHoursInDay`
+- L161 [local function] `CalculateDailyActivityScore`
+- L169 [local function] `CalculateRecentActivityAverage`
+- L194 [local function] `EnsureMetricsDB`
+- L217 [local function] `EnsurePlayerEntry`
+- L244 [local function] `MarkMetricsDirty`
+- L250 [local function] `RequestGuildRosterRefresh`
+- L260 [function] `Activity.RecordGuildChatMessage`
+- L290 [function] `Activity.RecordRosterSnapshot`
+- L342 [function] `Activity.BuildFeed`
+- L454 [local function] `FindPlayerMetricsEntry`
+- L486 [function] `Activity.GetPlayerSummary`
+- L517 [assigned function] `GRM.GetGuildActivityMetricsFeed`
+- L521 [assigned function] `GRM.GetPlayerActivitySummary`
+
+### GRM_AltManagement.lua
+
+- L13 [assigned function] `GRM.SetMain`
+- L68 [assigned function] `GRM.DemotePlayerFromMain`
+- L112 [assigned function] `GRM.GetAltGroupMain`
+- L141 [assigned function] `GRM.GetPlayerMain`
+- L158 [assigned function] `GRM.GetFormattedMainName`
+- L190 [assigned function] `GRM.IsMain`
+- L205 [assigned function] `GRM.IsFormerMemberMain`
+- L215 [assigned function] `GRM.IsFormerMemberAnAlt`
+- L234 [assigned function] `GRM.GetAltGroup`
+- L246 [assigned function] `GRM.CreateAltGroup`
+- L301 [assigned function] `GRM.AddAlt`
+- L439 [assigned function] `GRM.RemoveAltGroup`
+- L462 [assigned function] `GRM.IsPlayerInAltGroup`
+- L480 [assigned function] `GRM.CreateNewAltGroupID`
+- L498 [assigned function] `GRM.GetNumAltGroups`
+- L505 [assigned function] `GRM.GetAltNamesList`
+- L523 [assigned function] `GRM.GetListOfAlts`
+- L555 [assigned function] `GRM.GetListOfAltsLowerRankThanMyself`
+- L579 [assigned function] `GRM.PlayerIsAnAlt`
+- L594 [assigned function] `GRM.PlayerHasAlts`
+- L608 [assigned function] `GRM.LeftPlayerHasAlts`
+- L621 [assigned function] `GRM.GetNumAlts`
+- L635 [assigned function] `GRM.AddPlayerToAltGroup`
+- L701 [assigned function] `GRM.RemovePlayerFromAltGroup`
+- L779 [assigned function] `GRM.GetAltGroupTimeStamp`
+- L792 [assigned function] `GRM.IsAnyAltActive`
+- L813 [assigned function] `GRM.IsAnyAltActiveForRecommendKicks`
+- L850 [assigned function] `GRM.AddRejoinToAltGroup`
+- L880 [assigned function] `GRM.AddPlayerToOwnAltList`
+- L944 [assigned function] `GRM.CheckIfNeedToAddAlt`
+- L956 [assigned function] `GRM.ChangePlayerNameInAltGrouping`
+- L987 [assigned function] `GRM.GetAltWithOldestJoinDate`
+- L1023 [assigned function] `GRM.SyncJoinDatesOnAllAlts`
+- L1113 [assigned function] `GRM.SyncJoinDateUsingEarliest`
+- L1120 [assigned function] `GRM.SyncJoinDateUsingMain`
+- L1127 [assigned function] `GRM.SyncJoinDateUsingCurrentSelected`
+- L1134 [assigned function] `GRM.IsAltJoinDatesSynced`
+- L1170 [assigned function] `GRM.PlayerOrAltHasJD`
+- L1203 [assigned function] `GRM.PopulateAltFrames`
+- L1421 [assigned function] `GRM.GetSortedAltNamesWithDetails`
+- L1544 [assigned function] `GRM.GetAltTag`
+- L1556 [assigned function] `GRM.AddAltAutoComplete`
+- L1634 [assigned function] `GRM.KickAllAlts`
+- L1722 [assigned function] `GRM.SetBirthdayForAltGrouping`
+- L1787 [assigned function] `GRM.ResetBirthdayForAltGroup`
+- L1888 [assigned function] `GRM.SyncBirthdayWithNewAlt`
+
+### GRM_AltsImport.lua
+
+- L32 [assigned function] `GRM.ExportMainTagToNotes`
+- L38 [assigned function] `GRM.ExportAltTagToNotes`
+- L44 [assigned function] `GRM.ImportAllMains`
+- L48 [assigned function] `GRM.ImportAllAlts`
+
+### GRM_API.lua
+
+- L40 [assigned function] `GRM_API.GetMember`
+- L54 [assigned function] `GRM_API.GetFormerMember`
+- L68 [assigned function] `GRM_API.IsGuildMember`
+- L80 [assigned function] `GRM_API.GetMemberAlts`
+- L179 [assigned function] `GRM_API.ClearFriendsList`
+- L188 [assigned function] `GRM_API.ClearAllOfficerNotes`
+- L199 [assigned function] `GRM_API.ClearAllPublicNotes`
+- L210 [assigned function] `GRM_API.RestoreAllPublicNotesFromSave`
+- L229 [assigned function] `GRM_API.RestoreAllOfficerNotesFromSave`
+- L251 [assigned function] `GRM_API.RestoreAllPublicNotes`
+- L296 [assigned function] `GRM_API.SetAllUnlinkedPlayersToMain`
+- L315 [assigned function] `GRM_API.SetAllUnknownPromoteDates`
+- L353 [assigned function] `GRM_API.SetAllUnknownJoinDates`
+- L387 [assigned function] `GRM_API.ClearAllUnverifiedPromoteDates`
+- L406 [assigned function] `GRM_API.RollBackToVerifiedPromotionDatesOnly`
+- L425 [assigned function] `GRM_API.ValidateAllDates`
+- L450 [assigned function] `GRM_API.ReportAltGroupsOverLimit`
+- L503 [assigned function] `GRM_API.AddCustomRejoinEntry`
+- L521 [assigned function] `GRM_API.DetermineInterfaceRule`
+
+### grm_chattynator.lua
+
+- L12 [assigned function] `chattynator.IsChattynatorLoaded`
+- L24 [assigned function] `chattynator.GetChattynatorTab`
+- L51 [assigned function] `chattynator.ConfigureChattynatorTab`
+- L74 [assigned function] `chattynator.ChattynatorReport`
+- L90 [assigned function] `chattynator.SetReportChannel`
+- L97 [assigned function] `chattynator.DisableChannel`
+- L121 [assigned function] `chattynator.EnableChannel`
+- L146 [assigned function] `chattynator.InitializeTabsForGRM`
+- L164 [assigned function] `chattynator.RefreshChattynatorTabs`
+- L176 [assigned function] `chattynator.CreateChattynatorTab`
+- L200 [assigned function] `chattynator.CleanupChattynatorTabs`
+
+### GRM_ClassicFrames.lua
+
+- L5 [assigned function] `GRM_UI.EstablishClassicFrames`
+
+### GRM_Config.lua
+
+- L17 [assigned function] `Config.GetTimeOffesets`
+- L56 [assigned function] `Config.ActivateAddon`
+
+### GRM_Core.lua
+
+- L391 [assigned function] `GRM.CreateTexture`
+- L398 [assigned function] `GRM.GetMouseFocus`
+- L413 [assigned function] `GRM.IsHardcoreActive`
+- L427 [assigned function] `GRM.GameVersion`
+- L451 [assigned function] `GRM.CanViewOfficerNote`
+- L459 [assigned function] `GRM.CanEditOfficerNote`
+- L468 [assigned function] `GRM.CanEditPublicNote`
+- L476 [assigned function] `GRM.GuildRoster`
+- L485 [assigned function] `GRM.GetColorPickerFrame`
+- L515 [assigned function] `GRM.IsAddOnLoaded`
+- L523 [assigned function] `GRM.LoadLuaAddOn`
+- L531 [assigned function] `GRM.ForceLoadAddon`
+- L538 [assigned function] `GRM.SetSliderTemplate`
+- L550 [assigned function] `GRM.issecretvalue`
+- L564 [assigned function] `GRM.GetMaxPlayerLevelByExpansion`
+- L580 [assigned function] `GRM.InGroupLogic`
+- L653 [assigned function] `GRM.FrameCombatHide`
+- L713 [assigned function] `GRM.FrameCombatRestore`
+- L757 [assigned function] `GRM.WipeCombatHiddenState`
+- L769 [assigned function] `GRM.SecretValueRestrictionRestore`
+- L779 [assigned function] `GRM.IsInAnyPvPInstance`
+- L790 [assigned function] `GRM.GetWowProgressLink`
+- L807 [assigned function] `GRM.GetRaiderIOLink`
+- L826 [assigned function] `GRM.BuildRaceIDEnum`
+- L844 [assigned function] `GRM.BuildClassIDEnums`
+- L862 [assigned function] `GRM.ConfigureEnums`
+- L874 [assigned function] `GRM.ClearPermData`
+- L925 [assigned function] `GRM.ConfigureMiscForPlayer`
+- L934 [assigned function] `GRM.GetRankRestrictedDefaultRankIndex`
+- L947 [assigned function] `GRM.SetDefaultAddonSettings`
+- L1286 [assigned function] `GRM.IsSettingsConfigured`
+- L1300 [assigned function] `GRM.RefreshAllSettings`
+- L1308 [assigned function] `GRM.IsOldSettingsFormat`
+- L1326 [assigned function] `GRM.UpdateOldSettingsFormat`
+- L1403 [assigned function] `GRM.LoadSettings`
+- L1464 [assigned function] `GRM.GuildSpecificConfigurations`
+- L1482 [assigned function] `GRM.FinalSettingsConfigurations`
+- L1529 [assigned function] `GRM.VerifyAddonSettings`
+- L1609 [assigned function] `GRM.Validate_Guild_DB`
+- L1685 [assigned function] `GRM.GetClassName`
+- L1696 [assigned function] `GRM.SetClassChatColoring`
+- L1735 [assigned function] `GRM.SetChatClassColoringInWrath`
+- L1749 [assigned function] `GRM.SetChatClassColoringNew`
+- L1765 [assigned function] `GRM.SetChatColoring`
+- L1792 [assigned function] `GRM.GetPageIndex`
+- L1817 [assigned function] `GRM.ResetDefaultSettings`
+- L1903 [assigned function] `GRM.BuildComPattern`
+- L1930 [assigned function] `GRM.GetNumKeyedEntries`
+- L1945 [assigned function] `GRM.IsMouseOverAnyChatWindowIncludingCommunities`
+- L1994 [assigned function] `GRM.SetReportWindow`
+- L2069 [assigned function] `GRM.SetJoinAndRejoinTags`
+- L2087 [assigned function] `GRM.AddReportChannel`
+- L2123 [assigned function] `GRM.CreateChatTabs`
+- L2171 [assigned function] `GRM.MissingChatTabs`
+- L2289 [assigned function] `GRM.CancelChatTabCreation`
+- L2308 [assigned function] `GRM.EstablishNewCustomReportWindow`
+- L2404 [assigned function] `GRM.CleanupUnusedChannels`
+- L2442 [assigned function] `GRM.IsValidChannelName`
+- L2455 [assigned function] `GRM.ParseMultiChannelString`
+- L2501 [assigned function] `GRM.BuildMultiChannelString`
+- L2523 [assigned function] `GRM.SlimName`
+- L2539 [assigned function] `GRM.FormatName`
+- L2558 [assigned function] `GRM.Title`
+- L2569 [assigned function] `GRM.Use24HrBasedOnDefaultLanguage`
+- L2584 [assigned function] `GRM.L`
+- L2646 [assigned function] `GRM.OrigL`
+- L2663 [assigned function] `GRM.NormalizeHitRects`
+- L2676 [assigned function] `GRM.Round`
+- L2684 [assigned function] `GRM.Random`
+- L2691 [assigned function] `GRM.DeepCopySelfRefProtection`
+- L2716 [assigned function] `GRM.ConvertTableToArray`
+- L2733 [assigned function] `GRM.ConvertTableTo2DArray`
+- L2755 [assigned function] `GRM.AddGuildBackup`
+- L2785 [assigned function] `GRM.RemoveGuildBackup`
+- L2810 [assigned function] `GRM.LoadRestorePoint`
+- L2895 [assigned function] `GRM.RestoreAllOldNotes`
+- L2921 [assigned function] `GRM.ChangeServerNameOfAll`
+- L3010 [assigned function] `GRM.PurgeGuildFromDatabase`
+- L3053 [assigned function] `GRM.GetClubEpochJoinTime`
+- L3065 [assigned function] `GRM.GetSelectedClubID`
+- L3072 [assigned function] `GRM.ConvertToRealEpochNumber`
+- L3079 [assigned function] `GRM.GetFullNameClubMember`
+- L3112 [assigned function] `GRM.GetPlayerNameByGUID`
+- L3137 [assigned function] `GRM.GetPlayerSex`
+- L3159 [assigned function] `GRM.AppendServerName`
+- L3175 [assigned function] `GRM.AppendServerNameSimple`
+- L3187 [assigned function] `GRM.GetPlayerServer`
+- L3230 [assigned function] `GRM.GetNumMains`
+- L3248 [assigned function] `GRM.GetNumberPatternMatches`
+- L3255 [assigned function] `GRM.CreateGuildCreationDatePattern`
+- L3272 [assigned function] `GRM.SetSystemMessageFilter`
+- L3407 [assigned function] `GRM.SystemMessageHandler`
+- L3528 [assigned function] `GRM.SyncPlayerGoneOffline`
+- L3552 [assigned function] `GRM.SystemMessagePatternMatchCheck`
+- L3593 [assigned function] `GRM.GetBirthday`
+- L3613 [assigned function] `GRM.SetBirthdayInfo`
+- L3684 [assigned function] `GRM.AnnounceIfMacroReady`
+- L3746 [assigned function] `GRM.AddMainTagToComeOnlineSystemMessage`
+- L3814 [assigned function] `GRM.AddMainTagToGoneOfflineSystemMessage`
+- L3876 [assigned function] `GRM.SetGuildInfoDetails`
+- L3894 [assigned function] `GRM.GetAuditLinePlayervalues`
+- L3990 [assigned function] `GRM.GetAllGuildiesInOrder`
+- L4036 [assigned function] `GRM.GetAllGuildiesInJoinDateOrder`
+- L4131 [assigned function] `GRM.GetAllGuildiesInPromoDateOrder`
+- L4234 [assigned function] `GRM.GetAllMainsAndAltsInOrder`
+- L4300 [assigned function] `GRM.GetAllGuildiesByBirthdayDateOrder`
+- L4402 [assigned function] `GRM.GetAllCurrentAndFormerGuildies`
+- L4437 [assigned function] `GRM.RemoveSpecialCharacters`
+- L4460 [assigned function] `GRM.GetAutoCompleteMatches`
+- L4485 [assigned function] `GRM.GetAutoCompleteRealmMatches`
+- L4509 [assigned function] `GRM.GetPlayerRankIDAtStart`
+- L4523 [assigned function] `GRM.GetReputationTextLevel`
+- L4558 [assigned function] `GRM.AddPlayerStatusCheck`
+- L4617 [assigned function] `GRM.IsOnFriendsList`
+- L4638 [assigned function] `GRM.SetPlayersGUIDStillValid`
+- L4660 [assigned function] `GRM.IsPlayerStillOnServerByGUID`
+- L4686 [assigned function] `GRM.ValidateBanGUIDs`
+- L4717 [assigned function] `GRM.MiscCleanupOnLogin`
+- L4755 [assigned function] `GRM.GetPlayersWithoutGUID`
+- L4781 [assigned function] `GRM.QueryPlayersGUIDByFriendsList`
+- L4931 [assigned function] `GRM.QueryNearbyGUIDsAndUpdate`
+- L4993 [assigned function] `GRM.UpdateMemberOrFormerMemberGUID`
+- L5003 [assigned function] `GRM.CollectGUIDsWithinGoup`
+- L5036 [assigned function] `GRM.BanInfo`
+- L5060 [assigned function] `GRM.DelayMinimapButtonOpen`
+- L5100 [assigned function] `GRM.GetChannelType`
+- L5115 [assigned function] `GRM.GetChatRGB`
+- L5128 [assigned function] `GRM.GetNameWithMainTags`
+- L5184 [assigned function] `GRM.AddMainToChat`
+- L5267 [assigned function] `GRM.RefreshMainTagHexCode`
+- L5280 [assigned function] `GRM.GetMainTags`
+- L5293 [assigned function] `GRM.GetAltTags`
+- L5306 [assigned function] `GRM.GetCurrentMainTag`
+- L5313 [assigned function] `GRM.GetCurrentAltTag`
+- L5320 [assigned function] `GRM.RemoveMainAltTags`
+- L5331 [assigned function] `GRM.RemoveHexCodeColoringFromString`
+- L5350 [assigned function] `GRM.RemoveStringColoring`
+- L5379 [assigned function] `GRM.VersionCheck`
+- L5407 [assigned function] `GRM.RegisterVersionCheck`
+- L5476 [assigned function] `GRM.AddonUserRegister`
+- L5620 [assigned function] `GRM.GetNumAddonUsersOutdated`
+- L5635 [assigned function] `GRM.GetNumAddonUsersAvailableToSync`
+- L5651 [assigned function] `GRM.RegisterMessage`
+- L5663 [assigned function] `GRM.RegisterGuildAddonUsers`
+- L5710 [assigned function] `GRM.IsNumInString`
+- L5726 [assigned function] `GRM.IsValidName`
+- L5746 [assigned function] `GRM.ByteRulesFollowed`
+- L5776 [assigned function] `GRM.UTF8char`
+- L5804 [assigned function] `GRM.UTF8Len`
+- L5821 [assigned function] `GRM.GetNumLetters`
+- L5834 [assigned function] `GRM.CapitalizeFirst`
+- L5850 [assigned function] `GRM.FormatInputName`
+- L5883 [assigned function] `GRM.Capitalize`
+- L5891 [assigned function] `GRM.Title`
+- L5907 [assigned function] `GRM.Trim`
+- L5918 [assigned function] `GRM.NormalizeRealmName`
+- L5928 [assigned function] `GRM.StringToCharArray`
+- L5944 [assigned function] `GRM.GetWordArrayFromString`
+- L5959 [assigned function] `GRM.ConvertStringNumArrayToBoolArray`
+- L5977 [assigned function] `GRM.GetMythicRatingToMatchRaiderIO`
+- L6048 [assigned function] `GRM.AllignTwoColumns`
+- L6108 [assigned function] `GRM.GetRosterName`
+- L6131 [assigned function] `GRM.InitializeRosterButtons`
+- L6148 [assigned function] `GRM.InitializeCommunitiesButtons`
+- L6216 [assigned function] `GRM.RosterButton_OnUpdate`
+- L6267 [assigned function] `GRM.RecolorText`
+- L6289 [assigned function] `GRM.GetAllTooltipText`
+- L6361 [assigned function] `GRM.RebuildToolTip`
+- L6384 [assigned function] `GRM.MemberListBlizTooltip_Update`
+- L6445 [assigned function] `GRM.BuildGuildRosterHotkeyAndMacro`
+- L6499 [assigned function] `GRM.BindingCurrentlyInUse`
+- L6525 [assigned function] `GRM.ConfigureOnlineStatusText`
+- L6537 [assigned function] `GRM.RosterFrame`
+- L6670 [assigned function] `GRM.AltButtonPos`
+- L6705 [assigned function] `GRM.GetLevelRange`
+- L6761 [assigned function] `GRM.CopyFromJoinDate`
+- L6817 [assigned function] `GRM.CopyFromPromoDate`
+- L6914 [assigned function] `GRM.GetPlayerClass`
+- L6929 [assigned function] `GRM.GetPlayerClassByGUID`
+- L6952 [assigned function] `GRM.DetermineClass`
+- L6967 [assigned function] `GRM.GetClassColorRGB`
+- L6994 [assigned function] `GRM.GetStringClassColorByName`
+- L7032 [assigned function] `GRM.GetClassifiedName`
+- L7059 [assigned function] `GRM.rgbToHex`
+- L7086 [assigned function] `GRM.ConvertRGBScale`
+- L7104 [assigned function] `GRM.IsMouseOverAltButton`
+- L7121 [assigned function] `GRM.GetSelectedName`
+- L7139 [assigned function] `GRM.MouseOverClearAllTooltips`
+- L7150 [assigned function] `GRM.SetAltAsMainDropDownMenuLogic`
+- L7194 [assigned function] `GRM.DemoteMainToAltDropDownMenuLogic`
+- L7236 [assigned function] `GRM.KickAllBanned`
+- L7283 [assigned function] `GRM.CreateMacro`
+- L7330 [assigned function] `GRM.BuildMacroInviteAll`
+- L7349 [assigned function] `GRM.BanSpecificPlayer`
+- L7395 [assigned function] `GRM.AddMemberRecord`
+- L7554 [assigned function] `GRM.AddMemberToLeftPlayers`
+- L7620 [assigned function] `GRM.JoinAndRankDataCleanup`
+- L7645 [assigned function] `GRM.ImportJoinDate`
+- L7691 [assigned function] `GRM.GetMessageRGB`
+- L7776 [assigned function] `GRM.PrintLog`
+- L7840 [assigned function] `GRM.Report`
+- L7866 [assigned function] `GRM.ReportLocationCheck`
+- L7890 [assigned function] `GRM.BuildEventCalendarManagerScrollFrame`
+- L8152 [assigned function] `GRM.BuildAddonUserScrollFrame`
+- L8353 [assigned function] `GRM.BuildAltGroupingScrollFrame`
+- L8539 [assigned function] `GRM.BuildAutoCompleteAltSelectionScrollFrame`
+- L8634 [assigned function] `GRM.BuildAutoCompleteBanNames`
+- L8819 [assigned function] `GRM.ResetAutoCompleteHighlights`
+- L8831 [assigned function] `GRM.ConfigureSlider`
+- L8875 [assigned function] `GRM.GetBackupEntries`
+- L8918 [assigned function] `GRM.BackupHybridShiftDown`
+- L8992 [assigned function] `GRM.BackupHybridShiftUp`
+- L9064 [assigned function] `GRM.BackupSetLastValue`
+- L9073 [assigned function] `GRM.BackupSetFirstValue`
+- L9083 [assigned function] `GRM.UpdateBackupTooltip`
+- L9118 [assigned function] `GRM.SetBackupValues`
+- L9199 [assigned function] `GRM.BuildBackupScrollFrame`
+- L9308 [assigned function] `GRM.BuildBackupHybridButtons`
+- L9505 [assigned function] `GRM.GetAuditEntries`
+- L9535 [assigned function] `GRM.GetAutoCompleteNamesForAudit`
+- L9563 [assigned function] `GRM.SetAuditValues`
+- L9617 [assigned function] `GRM.AuditHybridShiftDown`
+- L9652 [assigned function] `GRM.AuditHybridShiftUp`
+- L9685 [assigned function] `GRM.AuditSetLastValue`
+- L9693 [assigned function] `GRM.AuditSetFirstValue`
+- L9701 [assigned function] `GRM.UpdateAuditTooltip`
+- L9734 [assigned function] `GRM.RefreshAuditFrames`
+- L9903 [assigned function] `GRM.UnlockAuditButtonHighlights`
+- L9912 [assigned function] `GRM.BuildAuditScrollButtons`
+- L10048 [assigned function] `GRM.GetIncompleteGuildDataCounts`
+- L10125 [assigned function] `GRM.RefreshAddonUserFrames`
+- L10144 [assigned function] `GRM.RefreshAddEventFrame`
+- L10202 [assigned function] `GRM.Next`
+- L10209 [assigned function] `GRM.NoteFormatParsingProtection`
+- L10211 [local function] `urlCodeToChar`
+- L10221 [assigned function] `GRM.GetPromotionLogString`
+- L10247 [assigned function] `GRM.GetDemotionLogString`
+- L10262 [assigned function] `GRM.GetLeveledString`
+- L10314 [assigned function] `GRM.GetNoteChangeString`
+- L10334 [assigned function] `GRM.GetOfficerNoteChangeString`
+- L10353 [assigned function] `GRM.GetRankRenamedString`
+- L10386 [assigned function] `GRM.GetInactiveReturnString`
+- L10398 [assigned function] `GRM.GetRecommendKickString`
+- L10433 [assigned function] `GRM.GetPromotionRecommendString`
+- L10463 [assigned function] `GRM.GetDemotionRecommendString`
+- L10491 [assigned function] `GRM.GetSpecialRecommendString`
+- L10525 [assigned function] `GRM.GetNameChangeString`
+- L10536 [assigned function] `GRM.GetLeftOrKickString`
+- L10633 [assigned function] `GRM.GetCustomNoteChangeString`
+- L10656 [assigned function] `GRM.GetGuildNameChangeString`
+- L10667 [assigned function] `GRM.GetBanLogString`
+- L10689 [assigned function] `GRM.GetBanLogUpdateAndEditString`
+- L10721 [assigned function] `GRM.GetUnBanString`
+- L10732 [assigned function] `GRM.GetBanStatusSyncString`
+- L10760 [assigned function] `GRM.GetJoinOrRejoinString`
+- L10942 [assigned function] `GRM.GetEventString`
+- L10968 [assigned function] `GRM.GetDeathString`
+- L10980 [assigned function] `GRM.ReProcessLogString`
+- L11113 [assigned function] `GRM.ReprocessAllLogEntriesToCurrentLanguage`
+- L11128 [assigned function] `GRM.RecordLeftGuildChanges`
+- L11257 [assigned function] `GRM.RemoveLineBreaks`
+- L11266 [assigned function] `GRM.RecordCustomNoteChanges`
+- L11295 [assigned function] `GRM.SetCustomNote`
+- L11368 [assigned function] `GRM.SetJoinDateToCustomNote`
+- L11409 [assigned function] `GRM.IsAnyCustomNoteLarge`
+- L11427 [assigned function] `GRM.GetPlayerGuildRep`
+- L11441 [assigned function] `GRM.IsPresenceOnline`
+- L11453 [assigned function] `GRM.GetPlayerRace`
+- L11471 [assigned function] `GRM.VerifyAllRankDates`
+- L11529 [assigned function] `GRM.VerifyAllJoinDates`
+- L11587 [assigned function] `GRM.GetNumUnverifiedJoinDates`
+- L11605 [assigned function] `GRM.GetNumUnverifiedPromoDates`
+- L11632 [assigned function] `GRM.NotificationCheck`
+- L11681 [assigned function] `GRM.NotificationIndependentChecker`
+- L11716 [assigned function] `GRM.SetBirthdayFrameLogic`
+- L11750 [assigned function] `GRM.SetBirthday`
+- L11841 [assigned function] `GRM.CleanupBirthdays`
+- L11893 [assigned function] `GRM.GetEventYear`
+- L11905 [assigned function] `GRM.GetEventMonth`
+- L11916 [assigned function] `GRM.GetEventMonthEnumResult`
+- L11923 [assigned function] `GRM.GetEventDay`
+- L11934 [assigned function] `GRM.IsCalendarEventAlreadyAdded`
+- L11970 [assigned function] `GRM.IsOnAnnouncementList`
+- L11998 [assigned function] `GRM.RemoveFromCalendarQue`
+- L12019 [assigned function] `GRM.RemoveAllFromEventQue`
+- L12054 [assigned function] `GRM.CalendarQueCheck`
+- L12070 [assigned function] `GRM.GetAnniversaryLogReport`
+- L12085 [assigned function] `GRM.GetBirthdayLogReport`
+- L12103 [assigned function] `GRM.ResetPlayerEvent`
+- L12112 [assigned function] `GRM.CleanupEventsFromplayers`
+- L12133 [assigned function] `GRM.InsertNewEvent`
+- L12191 [assigned function] `GRM.AddAnnouncementToCalendar`
+- L12236 [assigned function] `GRM.RemoveItemFromLog`
+- L12278 [assigned function] `GRM.ClearAllLogLinesWithinRange`
+- L12316 [assigned function] `GRM.ResetLogReport`
+- L12334 [assigned function] `GRM.LogSetLastValue`
+- L12342 [assigned function] `GRM.LogSetFirstValue`
+- L12350 [assigned function] `GRM.LogToolHybridShiftDown`
+- L12376 [assigned function] `GRM.LogToolHybridShiftUP`
+- L12403 [assigned function] `GRM.ConfigureChangesHeader`
+- L12435 [assigned function] `GRM.SetLogValues`
+- L12493 [assigned function] `GRM.GetOperatorsFromText`
+- L12510 [assigned function] `GRM.GetSearchLog`
+- L12663 [assigned function] `GRM.SetColoredLines`
+- L12688 [assigned function] `GRM.BuildLogComplete`
+- L12711 [assigned function] `GRM.BuildLog`
+- L12820 [assigned function] `GRM.BuildCoreLogFontstrings`
+- L12934 [assigned function] `GRM.RefreshLogTooltip`
+- L12978 [assigned function] `GRM.ResetLogStringPoints`
+- L13007 [assigned function] `GRM.AddOldLogHeader`
+- L13014 [assigned function] `GRM.AddNewChangesHeader`
+- L13021 [assigned function] `GRM.convertToArrayFormat`
+- L13062 [assigned function] `GRM.BuildCustomNoteScrollFrame`
+- L13129 [assigned function] `GRM.InitializeDropDownDay`
+- L13209 [assigned function] `GRM.InitializeDropDownYear`
+- L13276 [assigned function] `GRM.InitializeDropDownMonth`
+- L13340 [assigned function] `GRM.SetJoinDate`
+- L13466 [assigned function] `GRM.PlayerHasJoinDate`
+- L13483 [assigned function] `GRM.SetPromoDate`
+- L13558 [assigned function] `GRM.SetAllIncompleteJoinUnknown`
+- L13622 [assigned function] `GRM.SetAllIncompletePromoUnknown`
+- L13666 [assigned function] `GRM.SetAllIncompleteBdayUnknown`
+- L13728 [assigned function] `GRM.DateSubmitCancelResetLogic`
+- L13906 [assigned function] `GRM.SetDateButtonConfiguration`
+- L13948 [assigned function] `GRM.GetRecordedDate`
+- L13975 [assigned function] `GRM.SetDateSelectFrame`
+- L14027 [assigned function] `GRM.IsGuildieAnOfficer`
+- L14037 [assigned function] `GRM.GetPlayerRankPermissions`
+- L14047 [assigned function] `GRM.GetFirstOfficerRank`
+- L14063 [assigned function] `GRM.IsOfficerRankByIndex`
+- L14073 [assigned function] `GRM.IsPlayerAnOfficer`
+- L14080 [assigned function] `GRM.GetRankIndex`
+- L14105 [assigned function] `GRM.BuildRankList`
+- L14115 [assigned function] `GRM.OnRankChange`
+- L14239 [assigned function] `GRM.PopulateOptionsRankDropDown`
+- L14350 [assigned function] `GRM.PopulateBanListOptionsDropDown`
+- L14467 [assigned function] `GRM.PopulateDefaultDropDownRankMenu`
+- L14550 [assigned function] `GRM.CreateRankDropDownMenu`
+- L14602 [assigned function] `GRM.CreateDropDownMenu`
+- L14652 [assigned function] `GRM.PopulateClassDropDownMenu`
+- L14745 [assigned function] `GRM.PopulateMainTagDropdown`
+- L14816 [assigned function] `GRM.PopulateDefaultTabDropdown`
+- L14879 [assigned function] `GRM.PopulateLanguageDropdown`
+- L15052 [assigned function] `GRM.PopulateFontDropdown`
+- L15149 [assigned function] `GRM.PopulateTimestampFormatDropDown`
+- L15252 [assigned function] `GRM.Populate24HrDropDown`
+- L15323 [assigned function] `GRM.SetGroupInviteButton`
+- L15377 [assigned function] `GRM.CreateOptionsRankDropDown`
+- L15475 [assigned function] `GRM.ClearPromoDateHistory`
+- L15501 [assigned function] `GRM.ClearJoinDateHistory`
+- L15537 [assigned function] `GRM.ResetPlayerMetaData`
+- L15619 [assigned function] `GRM.ResetAllSavedData`
+- L15684 [assigned function] `GRM.ResetGuildSavedData`
+- L15746 [assigned function] `GRM.CheckForNewPlayer`
+- L15886 [assigned function] `GRM.GetParsedNameFromInviteAnnouncmenet`
+- L15912 [assigned function] `GRM.LiveKickDetection`
+- L15945 [assigned function] `GRM.SendBannedSyncMessageForAlts`
+- L15997 [assigned function] `GRM.BanAndKickingAltsByPlayer`
+- L16067 [assigned function] `GRM.GetPlayerKickedFromButton`
+- L16097 [assigned function] `GRM.KickButtonLogic`
+- L16143 [assigned function] `GRM.KickAction`
+- L16192 [assigned function] `GRM.GetPromotionText`
+- L16222 [assigned function] `GRM.GetDeomotionText`
+- L16271 [assigned function] `GRM.AddToLiveScanQue`
+- L16295 [assigned function] `GRM.ProcessLiveScanQue`
+- L16328 [assigned function] `GRM.SetNextTrue`
+- L16353 [assigned function] `GRM.SystemMessageLiveDetectionControl`
+- L16496 [assigned function] `GRM.LiveJoinDetection`
+- L16511 [assigned function] `GRM.LivePromoteOrDemoteDetection`
+- L16562 [assigned function] `GRM.LiveLeaveDetection`
+- L16594 [assigned function] `GRM.GetParsedplayerName`
+- L16611 [assigned function] `GRM.GetParsedJoinPlayerName`
+- L16621 [assigned function] `GRM.GetParsedKickPlayerNames`
+- L16676 [assigned function] `GRM.RemoveBan`
+- L16705 [assigned function] `GRM.UnBanplayer`
+- L16721 [assigned function] `GRM.BanListUnban`
+- L16746 [assigned function] `GRM.PopulateMemberDetails`
+- L17182 [assigned function] `GRM.RemoveBanSendSyncMessage`
+- L17223 [assigned function] `GRM.FactionIcon`
+- L17253 [assigned function] `GRM.DeathStatus`
+- L17297 [assigned function] `GRM.ClearAllFrames`
+- L17331 [assigned function] `GRM.ClearResetFramesOnTabChange`
+- L17344 [assigned function] `GRM.SubFrameCheck`
+- L17371 [assigned function] `GRM.SelectPlayerOnRoster`
+- L17389 [assigned function] `GRM.DateUntrustedTag`
+- L17406 [assigned function] `GRM.GetPlayerWhoBanned`
+- L17428 [assigned function] `GRM.GetBannedPlayersWithGUIDs`
+- L17455 [assigned function] `GRM.GetBannedPlayersStillInGuild`
+- L17474 [assigned function] `GRM.SyncRemoveCurrentPlayerBan`
+- L17492 [assigned function] `GRM.SyncAddCurrentPlayerBan`
+- L17507 [assigned function] `GRM.ChangeCurrentPlayerBanReason`
+- L17522 [assigned function] `GRM.GetNumberOfPlayerSBannedCurrentlyInGuild`
+- L17548 [assigned function] `GRM.GetSortedBanListNamesWithDetails`
+- L17725 [assigned function] `GRM.IsAnyBanHighlighted`
+- L17742 [assigned function] `GRM.ClearAllBanHighlights`
+- L17753 [assigned function] `GRM.IsBanNameOnList`
+- L17770 [assigned function] `GRM.RefreshBanListFrames`
+- L18107 [assigned function] `GRM.RestoreTooltip`
+- L18115 [assigned function] `GRM.GetRankHistory`
+- L18159 [assigned function] `GRM.PromoRankTooltip`
+- L18236 [assigned function] `GRM.JoinDateTooltip`
+- L18320 [assigned function] `GRM.PlayerNameTooltip`
+- L18353 [assigned function] `GRM.GetSex`
+- L18368 [assigned function] `GRM.AltNameTooltip`
+- L18472 [assigned function] `GRM.CustomNoteSlider`
+- L18484 [assigned function] `GRM.PlayerStatusNotificationTooltip`
+- L18501 [assigned function] `GRM.EditBdayTooltip`
+- L18523 [assigned function] `GRM.MemberDetailToolTips`
+- L18563 [assigned function] `GRM.ModifySpecificGuildControlValue`
+- L18604 [assigned function] `GRM.GetGuildInfoTextSafe`
+- L18621 [assigned function] `GRM.UpdateGuildInfoWithNewValue`
+- L18641 [assigned function] `GRM.GetRulesString`
+- L18653 [assigned function] `GRM.GetEachGlobalControl`
+- L18667 [assigned function] `GRM.GetGlobalControlValue`
+- L18686 [assigned function] `GRM.UpdateGuildLeaderPermissions`
+- L18755 [assigned function] `GRM.SetJoinTagCustomFormat`
+- L18857 [assigned function] `GRM.SetNoteTriggerRestrictions`
+- L18901 [assigned function] `GRM.IsCustomJoinRestricted`
+- L18918 [assigned function] `GRM.IsCustomReJoinRestricted`
+- L18936 [assigned function] `GRM.SetTimestampRestriction`
+- L18981 [assigned function] `GRM.SetLeaderRankRestrictionSetting`
+- L19021 [assigned function] `GRM.SetLeaderBanRestrictionSetting`
+- L19074 [assigned function] `GRM.SetLeaderCustomNoteRestrictionSetting`
+- L19115 [assigned function] `GRM.SetLeaderJoinDateRestrictionSetting`
+- L19195 [assigned function] `GRM.SetLeaderUsingJoinTagHeaders`
+- L19234 [assigned function] `GRM.IsSyncRankGuildLeaderRestricted`
+- L19279 [assigned function] `GRM.ReportRankRestriction`
+- L19292 [assigned function] `GRM.GetRankRestrictionText`
+- L19306 [assigned function] `GRM.GetGlobalSettingsProgress`
+- L19328 [assigned function] `GRM.AllGlobalsAreSet`
+- L19349 [assigned function] `GRM.SetGlobalControlsToGuildInfo`
+- L19400 [assigned function] `GRM.GetAllGlobalRulesAsString`
+- L19442 [assigned function] `GRM.CheckAllDates`
+- L19563 [assigned function] `GRM.GetParsedDate`
+- L19583 [assigned function] `GRM.RemoveDateFromNote`
+- L19605 [assigned function] `GRM.ClearJoinTag`
+- L19625 [assigned function] `GRM.ParseDateFormat`
+- L19748 [assigned function] `GRM.CleanupNoteDate`
+- L19770 [assigned function] `GRM.GetNoteDateDetails`
+- L19850 [assigned function] `GRM.IsDateInOtherNotes`
+- L19883 [assigned function] `GRM.IsValidYear`
+- L19900 [assigned function] `GRM.IsValidMonth`
+- L19911 [assigned function] `GRM.IsValidDay`
+- L19925 [assigned function] `GRM.GetParsedNoteDateNumbers`
+- L19974 [assigned function] `GRM.DatesDoMatch`
+- L19995 [assigned function] `GRM.AuditRefresh`
+- L20006 [assigned function] `GRM.IsAnyHighlighted`
+- L20022 [assigned function] `GRM.GetNoteName`
+- L20037 [assigned function] `GRM.GetCountNeedingAttention`
+- L20054 [assigned function] `GRM.GetCountThatAreInMultipleLocations`
+- L20070 [assigned function] `GRM.GetCountIncorrectLocationNotCorrectNotImported`
+- L20085 [assigned function] `GRM.RefreshJDAuditToolsTextFrames`
+- L20134 [assigned function] `GRM.RefreshJDAuditToolFrames`
+- L20217 [assigned function] `GRM.BuildJDToolHybridButtons`
+- L20381 [assigned function] `GRM.UpdateJDAuditTooltip`
+- L20396 [assigned function] `GRM.JDAuditToolHybridShiftDown`
+- L20436 [assigned function] `GRM.JDAuditToolHybridShiftUp`
+- L20477 [assigned function] `GRM.SetJDAuditValues`
+- L20567 [assigned function] `GRM.JDAuditSetLastValue`
+- L20575 [assigned function] `GRM.JDAuditSetFirstValue`
+- L20583 [assigned function] `GRM.ConvertGRMDateFromNote`
+- L20591 [assigned function] `GRM.ConvertNoteFromGRM`
+- L20598 [assigned function] `GRM.EditJoinDateManually`
+- L20635 [assigned function] `GRM.EditSavedNoteDateManually`
+- L20791 [assigned function] `GRM.AddDateTagToDefaultNote`
+- L20916 [assigned function] `GRM.AddTimeStampToNote`
+- L20987 [assigned function] `GRM.RemoveDatesFromNonDefaultNotes`
+- L21054 [assigned function] `GRM.FixMismatchedGRMdatesUsingNote`
+- L21072 [assigned function] `GRM.FixMismatchedNotesUsingGRM`
+- L21088 [assigned function] `GRM.ImportDatesFromNoteToGRM`
+- L21104 [assigned function] `GRM.GetNumAuditToolSelected`
+- L21121 [assigned function] `GRM.AddJoinDatesToDefaultNotes`
+- L21141 [assigned function] `GRM.CleanUpNonDefaultNotes`
+- L21158 [assigned function] `GRM.MismatchConfirmConfig`
+- L21170 [assigned function] `GRM.MismatchConfirmConfig2`
+- L21182 [assigned function] `GRM.MismatchConfirmConfig3`
+- L21194 [assigned function] `GRM.MismatchConfirmConfig4`
+- L21206 [assigned function] `GRM.MismatchConfirmConfig5`
+- L21218 [assigned function] `GRM.GetNumMismatchedButton4`
+- L21237 [assigned function] `GRM.GetNumMismatchedButton3`
+- L21256 [assigned function] `GRM.GetNumMismatchedButton2`
+- L21274 [assigned function] `GRM.GetNumMismatchedButton1`
+- L21292 [assigned function] `GRM.GetNumMismatchedButton7`
+- L21316 [assigned function] `GRM.SetHybridScrollFrameSliderParameters`
+- L21411 [assigned function] `GRM.HybridScrollOnValueChangedConfig`
+- L21457 [assigned function] `GRM.HybridControl`
+- L21475 [assigned function] `GRM.SearchPlayerInLog`
+- L21485 [assigned function] `GRM.OpenPlayerWindow`
+- L21523 [assigned function] `GRM.GetRosterSelectionID`
+- L21592 [assigned function] `GRM.GlobalSettingsLoopCheck`
+- L21622 [assigned function] `GRM.TriggerPlayerNote`
+- L21701 [assigned function] `GRM.UpdateNoteFromChat`
+- L21737 [assigned function] `GRM.IsPlayerAnAddonUser`
+- L21752 [assigned function] `GRM.SpecialAddonAltTagCleanup`
+- L21783 [assigned function] `GRM.SetConfirmationWindow`
+- L21838 [assigned function] `GRM.GetTransitionFrameToFade`
+- L21859 [assigned function] `GRM.FrameTransition`
+- L21917 [assigned function] `GRM.OptionTabFrameControl`
+- L21966 [assigned function] `GRM.DisableTabButtons`
+- L21998 [assigned function] `GRM.DisableSubTabButtons`
+- L22043 [assigned function] `GRM.GR_Roster_Click`
+- L22094 [assigned function] `GRM.TriggerTrackingCheck`
+- L22116 [assigned function] `GRM.TrackingIntegrityCheck`
+- L22149 [assigned function] `GRM.IsCalendarEventEditOpen`
+- L22165 [assigned function] `GRM.UpdateMacroToolSafeListExpirations`
+- L22192 [assigned function] `GRM.ValidateIgnoreExpireDates`
+- L22238 [assigned function] `GRM.SlashCommandScan`
+- L22250 [assigned function] `GRM.SlashCommandSync`
+- L22395 [assigned function] `GRM.SlashCommandCenter`
+- L22438 [assigned function] `GRM.SlashCommandHelp`
+- L22475 [assigned function] `GRM.SlashCommandClearAll`
+- L22493 [assigned function] `GRM.SlashCommandClearGuild`
+- L22521 [assigned function] `GRM.HardReset`
+- L22535 [assigned function] `GRM.SlashCommandVersion`
+- L22542 [assigned function] `GRM.SlashCommandMinimapReset`
+- L22549 [assigned function] `GRM.SlashCommandKick`
+- L22564 [assigned function] `GRM.SlashCommandBan`
+- L22574 [assigned function] `GRM.SlashCommandAudit`
+- L22584 [assigned function] `GRM.SlashCommandLog`
+- L22594 [assigned function] `GRM.SlashCommandUsers`
+- L22604 [assigned function] `GRM.SlashCommandEvents`
+- L22614 [assigned function] `GRM.SlashCommandOptions`
+- L22625 [assigned function] `GRM.SlashCommandExport`
+- L22652 [assigned function] `GRM.SlashCommandModulesOptions`
+- L22660 [assigned function] `GRM.SlashCommandGUID`
+- L22670 [assigned function] `GRM.SlashCommandProf`
+- L22682 [assigned function] `GRM.SlashCommandSearch`
+- L22720 [assigned function] `GRM.SlashCommandAltLimitAudit`
+- L22732 [assigned function] `GRM.InitiateConfirmFrame`
+- L22821 [assigned function] `GRM.OpenCoreWindow`
+- L22841 [assigned function] `GRM.SlashCommandRosterActions`
+- L22842 [assigned function] `SlashCmdList[slashCommand]`
+- L22861 [assigned function] `GRM.SlashCommandActions`
+- L22862 [assigned function] `SlashCmdList[slashCommand]`
+- L23002 [assigned function] `GRM.InitiateMemberDetailFrame`
+- L23021 [assigned function] `GRM.AllRemainingNonDelayFrameInitialization`
+- L23028 [assigned function] `GRM.ConfigureGuild`
+- L23082 [assigned function] `GRM.FixBackups`
+- L23101 [assigned function] `GRM.ConfigureAnnounceOnLogin`
+- L23124 [assigned function] `GRM.InitializePreCheck`
+- L23145 [assigned function] `GRM.AutoImportDate`
+- L23163 [assigned function] `GRM.TrackingConfiguration`
+- L23324 [assigned function] `GRM.SecretValueLoadDelayHandler`
+- L23356 [assigned function] `GRM.DelayForGuildInfoCallback`
+- L23406 [assigned function] `GRM.MessageHookControl`
+- L23421 [assigned function] `GRM.SystemMessageHookControl`
+- L23431 [assigned function] `GRM.LoadAddon`
+- L23509 [assigned function] `GRM.LoadRecursiveErrorCheck`
+- L23524 [assigned function] `GRM.finalLoadSteps`
+- L23549 [assigned function] `GRM.ReactivateAddon`
+- L23591 [assigned function] `GRM.ManageGuildStatus`
+- L23650 [assigned function] `GRM.DataLoadDelayProtection`
+- L23679 [assigned function] `GRM.SettingsLoadedFinishDataLoad`
+- L23732 [assigned function] `GRM.GetNumModules`
+- L23744 [assigned function] `GRM.OnAchievementEarned`
+- L23757 [assigned function] `GRM.AnnounceAchievement`
+
+### GRM_Debug.lua
+
+- L11 [assigned function] `Debug.DebugConfig`
+- L38 [assigned function] `Debug.DebugLog`
+- L56 [assigned function] `Debug.AddDebugMessage`
+- L76 [assigned function] `Debug.DebugMessages`
+
+### GRM_EE.lua
+
+- L16 [assigned function] `GRM.IsGuildEE`
+- L24 [assigned function] `GRM.IsPlayerEE`
+
+### GRM_Export.lua
+
+- L13 [assigned function] `Export.ExportMemberDetailsHeaders`
+- L69 [assigned function] `Export.BuildExportMemberDetails`
+- L447 [assigned function] `Export.DelimiterFix`
+- L462 [assigned function] `Export.BuildExportAnyText`
+- L487 [assigned function] `Export.BuildExportLogFrame`
+- L619 [assigned function] `Export.BuildExportDelimiterDropdownMenu`
+- L686 [assigned function] `Export.ExportScrollSliderConfigure`
+- L723 [assigned function] `Export.ResetExportLogSettingsOnChange`
+- L762 [assigned function] `Export.SetExportTabHighlights`
+- L821 [assigned function] `Export.SetExportFilters`
+- L950 [assigned function] `Export.CheckButtonsAllChecked`
+- L972 [assigned function] `Export.ProcessExportLevelRange`
+- L1073 [assigned function] `Export.ResetExportLevelRange`
+- L1089 [assigned function] `Export.LoadExportMembertab`
+- L1144 [assigned function] `Export.LoadExportFormerMembertab`
+- L1196 [assigned function] `Export.LoadExportDeathsTab`
+- L1252 [assigned function] `Export.GetHardcoreDeaths`
+- L1279 [assigned function] `Export.BuildExportDeaths`
+- L1357 [assigned function] `Export.ExportButtonLogic`
+- L1374 [assigned function] `Export.CountTotalMembersThatMatch`
+- L1448 [assigned function] `Export.ExportRangeEditBox1`
+- L1490 [assigned function] `Export.ExportRangeEditBox2`
+- L1540 [assigned function] `Export.SetExportButtonText`
+- L1596 [assigned function] `Export.LoadExportUI`
+- L2118 [assigned function] `GRM_UI.ExportFilterRealm`
+- L2389 [assigned function] `Export.ConfigureTotalMembers`
+- L2461 [assigned function] `GRM_UI.HardcoreExportSave`
+- L2482 [assigned function] `Export.ExportHardcoreOptions`
+- L2851 [assigned function] `Export.BuildExportStrings`
+
+### GRM_G_Util.lua
+
+- L9 [assigned function] `G_Util.GetNumGuildies`
+- L16 [assigned function] `G_Util.GetNumGuildiesInGuild`
+- L31 [assigned function] `G_Util.CheckGuildRanks`
+- L91 [assigned function] `G_Util.GetListOfGuildRanks`
+- L151 [assigned function] `G_Util.ParseGuildRanks`
+- L163 [assigned function] `G_Util.GetGuildMemberRankID`
+- L175 [assigned function] `G_Util.GetNumGuildiesOnline`
+- L182 [assigned function] `G_Util.GetListOfOnlinePlayers`
+- L198 [assigned function] `G_Util.IsGuildieOnline`
+- L211 [assigned function] `G_Util.GetSortedPlayerNames`
+
+### GRM_GuildSync.lua
+
+- L272 [assigned function] `GRMsync.MessageThrottleUpdate`
+- L310 [assigned function] `GRMsync.ResetDefaultValuesOnSyncReEnable`
+- L331 [assigned function] `GRMsync.ResetReportTables`
+- L399 [assigned function] `GRMsync.ResetTempTables`
+- L442 [assigned function] `GRMsync.ResetSyncTracker`
+- L487 [assigned function] `GRMsyncGlobals.ProgressControl`
+- L663 [assigned function] `GRMsync.InitializeTrackerData`
+- L675 [assigned function] `GRMsync.ParseComMsg`
+- L702 [assigned function] `GRMsync.SyncTimeEstimation`
+- L724 [assigned function] `GRMsync.SyncProgressPoint`
+- L773 [assigned function] `GRMsync.LiveTracking`
+- L803 [assigned function] `GRMsync.TimeDelayResetTracker`
+- L822 [assigned function] `GRMsync.ProgressCompleteReport`
+- L828 [assigned function] `GRMsync.SyncTrackerOnShow`
+- L899 [assigned function] `GRMsync.LoadSyncUI`
+- L1001 [assigned function] `GRMsync.TriggerFullReset`
+- L1015 [assigned function] `GRMsync.WaitTilDatabaseLoads`
+- L1030 [assigned function] `GRMsync.EndSync`
+- L1054 [assigned function] `GRMsync.InquireLeader`
+- L1067 [assigned function] `GRMsync.LeaderRespond`
+- L1098 [assigned function] `GRMsync.ReviewElectResponses`
+- L1160 [assigned function] `GRMsync.RequestElection`
+- L1172 [assigned function] `GRMsync.SendElectionInfo`
+- L1184 [assigned function] `GRMsync.RegisterTimeStamps`
+- L1195 [assigned function] `GRMsync.ElectedLeader`
+- L1216 [assigned function] `GRMsync.EstablishLeader`
+- L1249 [assigned function] `GRMsync.SetLeader`
+- L1311 [assigned function] `GRMsync.TriggerChatThrottleDelay`
+- L1318 [assigned function] `GRMsync.HookComms`
+- L1351 [assigned function] `GRMsync.SyncTriggerMessage`
+- L1371 [assigned function] `GRMsync.SendMessage`
+- L1397 [assigned function] `GRMsync.CheckJoinDateChange`
+- L1477 [assigned function] `GRMsync.CheckPromotionDateChange`
+- L1547 [assigned function] `GRMsync.EventAddedToCalendarCheck`
+- L1576 [assigned function] `GRMsync.CheckFinalAltMainAndNotGroupChanges`
+- L1612 [assigned function] `GRMsync.CheckFinalAltFullGroupChanges`
+- L1680 [assigned function] `GRMsync.CheckAddAltChange`
+- L1758 [assigned function] `GRMsync.IsAltGroupSameExceptToonToAdd`
+- L1790 [assigned function] `GRMsync.ProcessFullAltGroupChange`
+- L1839 [assigned function] `GRMsync.CheckRemoveAltChange`
+- L1886 [assigned function] `GRMsync.CheckSetMainChange`
+- L1910 [assigned function] `GRMsync.CheckDemoteFromMainChange`
+- L1928 [assigned function] `GRMsync.CheckCustomNoteSyncChange`
+- L2042 [assigned function] `GRMsync.CheckCustomNoteChange`
+- L2132 [assigned function] `GRMsync.CheckBirthdayChange`
+- L2143 [assigned function] `GRMsync.CheckBirthdayForSync`
+- L2180 [assigned function] `GRMsync.CheckBirthdayRemoveChange`
+- L2191 [assigned function] `GRMsync.CheckBanListChange`
+- L2330 [assigned function] `GRMsync.CheckUnbanListChangeLive`
+- L2360 [assigned function] `GRMsync.BanManagement`
+- L2589 [assigned function] `GRMsync.RegisterPrefix`
+- L2601 [assigned function] `GRMsync.RegisterPrefixes`
+- L2610 [assigned function] `GRMsync.IsPrefixVerified`
+- L2638 [assigned function] `GRMsync.IsCompatibleToShareData`
+- L2677 [assigned function] `GRMsync.GetCustomPseudoHash`
+- L2833 [assigned function] `GRMsync.RefreshPlayerRankIDs`
+- L2846 [assigned function] `GRMsync.GetListOfPlayersWithVerifiedJoinDates`
+- L2865 [assigned function] `GRMsync.GetListOfPlayersWIthVerifiedPromoteDates`
+- L2884 [assigned function] `GRMsync.GetListPlayersWithAltTimeStamp`
+- L2924 [assigned function] `GRMsync.GetListOfPlayersWithCustomNotesModified`
+- L2943 [assigned function] `GRMsync.GetListOfPlayersWithModifiedBdays`
+- L2965 [assigned function] `GRMsync.GetListBannedAndUnbannedPlayers`
+- L3056 [assigned function] `GRMsync.ConvertGUIDToVal`
+- L3071 [assigned function] `GRMsync.ConvertStringToVal`
+- L3084 [assigned function] `GRMsync.SendOverallDataHashes`
+- L3098 [assigned function] `GRMsync.BoolToInt`
+- L3108 [assigned function] `GRMsync.CompareOverallHashes`
+- L3140 [assigned function] `GRMsync.SetSyncPathway`
+- L3161 [assigned function] `GRMsync.UpdateSyncPathway`
+- L3170 [assigned function] `GRMsync.ReviewAndSendPrecheckData`
+- L3214 [assigned function] `GRMsync.SendPrecheckData`
+- L3294 [assigned function] `GRMsync.CollectPreCheckData`
+- L3314 [assigned function] `GRMsync.Convert2DArrayToDictionary`
+- L3328 [assigned function] `GRMsync.ContinueSyncInCategory`
+- L3333 [assigned function] `IsCompatibleEnum[ind]`
+- L3339 [assigned function] `IsCompatibleEnum[ind]`
+- L3376 [assigned function] `GRMsync.CompareListDBMarkers`
+- L3407 [assigned function] `GRMsync.CompareBdayDataMarkers`
+- L3432 [assigned function] `GRMsync.ProcessBdayDataAndContinue`
+- L3473 [assigned function] `GRMsync.ProcessPreCheckDataAndBeginSync`
+- L3519 [assigned function] `GRMsync.BeginSyncSteps`
+- L3536 [assigned function] `GRMsync.NextSyncStep`
+- L3576 [assigned function] `GRMsync.SendCompletionMsg`
+- L3589 [assigned function] `GRMsync.SendBDAYCompletion`
+- L3609 [assigned function] `GRMsync.GetNumDigits`
+- L3617 [assigned function] `GRMsync.SendJDPacketsNotMine`
+- L3703 [assigned function] `GRMsync.SendJDPackets`
+- L3776 [assigned function] `GRMsync.BuildJoinDatesForSync`
+- L3806 [assigned function] `GRMsync.SendPDPacketsNotMine`
+- L3892 [assigned function] `GRMsync.SendPDPackets`
+- L3965 [assigned function] `GRMsync.BuildPromoteDatesForSync`
+- L3995 [assigned function] `GRMsync.ValidatePromoteDataForSync`
+- L4024 [assigned function] `GRMsync.SendAltNamesNotMine`
+- L4111 [assigned function] `GRMsync.SendAltPacketsNoGroupAndMainOnly`
+- L4252 [assigned function] `GRMsync.SendAltGroupsFullDetails`
+- L4403 [assigned function] `GRMsync.BuildAltGroupsForSync`
+- L4473 [assigned function] `GRMsync.SendCUSTPacketsNotMine`
+- L4559 [assigned function] `GRMsync.SendCustomNotePackets`
+- L4637 [assigned function] `GRMsync.BuildCustomNotesForSync`
+- L4668 [assigned function] `GRMsync.SendBdayPacketsNotMine`
+- L4754 [assigned function] `GRMsync.SendBDayPackets`
+- L4826 [assigned function] `GRMsync.BuildBdayDatesForSync`
+- L4858 [assigned function] `GRMsync.SendBanNamesNotMine`
+- L4936 [assigned function] `GRMsync.SendBanPacketsFullDetails`
+- L5035 [assigned function] `GRMsync.BuildBanNamesForSync`
+- L5159 [assigned function] `GRMsync.ErrorCheck`
+- L5324 [assigned function] `GRMsync.SendQueUpdate`
+- L5341 [assigned function] `GRMsync.IsPlayerDataSyncCompatible`
+- L5361 [assigned function] `GRMsync.IsPlayerDataSyncCompatibleWithAnyOnline`
+- L5375 [assigned function] `GRMsync.ReportAuditMessage`
+- L5398 [assigned function] `GRMsync.InitializeRankRestrictionCheck`
+- L5410 [assigned function] `GRMsync.InitiateDataSync`
+- L5512 [assigned function] `GRMsync.SubmitFinalJoinDateData`
+- L5571 [assigned function] `GRMsync.SubmitFinalPromoDateData`
+- L5633 [assigned function] `GRMsync.SubmitFinalAltNoGroupAndMainOnly`
+- L5738 [assigned function] `GRMsync.SubmitFinalAltFullGroups`
+- L5874 [assigned function] `GRMsync.ProcessFinalAltChanges`
+- L5951 [assigned function] `GRMsync.UnifyBirthdaysAmongAltGroups`
+- L6024 [assigned function] `GRMsync.SubmitFinalCustNoteData`
+- L6111 [assigned function] `GRMsync.SubmitFinalBansData`
+- L6265 [assigned function] `GRMsync.SendDataCompletionMsg`
+- L6274 [assigned function] `GRMsync.SubmitFinalSyncData`
+- L6291 [assigned function] `GRMsync.SubmitFinalBdayData`
+- L6348 [assigned function] `GRMsync.SendDataCompletionMsgBday`
+- L6357 [assigned function] `GRMsync.FinalBdayMessagesVerifiedSendComplete`
+- L6365 [assigned function] `GRMsync.FinalSyncComplete`
+- L6411 [assigned function] `GRMsync.UpdateLeftPlayerInfo`
+- L6497 [assigned function] `GRMsync.CollectBanData`
+- L6606 [assigned function] `GRMsync.CollectDataPacketsF`
+- L6634 [assigned function] `GRMsync.CollectData`
+- L6668 [assigned function] `GRMsync.CollectAltAddData`
+- L6761 [assigned function] `GRMsync.CollectCustomNoteData`
+- L6826 [assigned function] `GRMsync.CollectBirthdayData`
+- L6853 [assigned function] `GRMsync.CheckingJDChanges`
+- L6885 [assigned function] `GRMsync.CheckingPDChanges`
+- L6917 [assigned function] `GRMsync.CheckingALTChanges`
+- L7090 [assigned function] `GRMsync.CheckingCustomNoteChanges`
+- L7122 [assigned function] `GRMsync.CheckingBANChanges`
+- L7156 [assigned function] `GRMsync.BuildValidatedJoinDatesForSync`
+- L7182 [assigned function] `GRMsync.BuildValidatedPromoteDatesForSync`
+- L7208 [assigned function] `GRMsync.BuildValidatedCustomNotesForSync`
+- L7234 [assigned function] `GRMsync.BuildValidatedBdayDatesForSync`
+- L7260 [assigned function] `GRMsync.BuildValidatedBanProfilesForSync`
+- L7286 [assigned function] `GRMsync.BuildValidatedAltGroupsForSync`
+- L7347 [assigned function] `GRMsync.CheckingBdayChanges`
+- L7443 [assigned function] `GRMsync.ConvertIntStringToArray`
+- L7454 [assigned function] `GRMsync.ParseAllSeparatedItems`
+- L7468 [assigned function] `GRMsync.CollectMissingMsgRequest`
+- L7485 [assigned function] `GRMsync.SendRequestsForMissingMessages`
+- L7565 [assigned function] `GRMsync.SendMissingMessages`
+- L7629 [assigned function] `GRMsync.SortReceivedMessageIndexes`
+- L7638 [assigned function] `GRMsync.ValidateReSentMessages`
+- L7655 [assigned function] `GRMsync.ValidateReSentMessagesFinal`
+- L7671 [assigned function] `GRMsync.ValidateReSentMessagesBday`
+- L7697 [assigned function] `GRMsync.MessageDeliveryCheck`
+- L7726 [assigned function] `GRMsync.MessageDeliveryCheckFINAL`
+- L7750 [assigned function] `GRMsync.MessageDeliveryCheckBDAY`
+- L7790 [assigned function] `GRMsync.DetermineMissingMessages`
+- L7834 [assigned function] `GRMsync.AnyMessagesMissing`
+- L7906 [assigned function] `GRMsync.AnyMessagesMissingFinal`
+- L7947 [assigned function] `GRMsync.AnyMessagesMissingBDAY`
+- L7986 [assigned function] `GRMsync.PreCheckChanges`
+- L8009 [assigned function] `GRMsync.CheckChanges`
+- L8045 [assigned function] `GRMsync.ReportResults`
+- L8107 [assigned function] `GRMsync.ReportSyncCompletion`
+- L8159 [assigned function] `GRM.AuditRefreshTracker`
+- L8184 [assigned function] `GRMsync.RemoveAltErrorFix`
+- L8227 [assigned function] `GRMsync.RegisterCommunicationProtocols`
+- L8654 [assigned function] `GRMsync.BusyMessage`
+- L8669 [assigned function] `GRMsync.DataRequestStart`
+- L8705 [assigned function] `GRMsync.BuildSyncNetwork`
+- L8751 [assigned function] `GRMsync.Initialize`
+
+### GRM_HC.lua
+
+- L10 [assigned function] `HC.HardCoreInitialize`
+- L49 [assigned function] `HC.ParseOutPlayerName`
+- L56 [assigned function] `HC.LogDeath`
+- L84 [assigned function] `HC.SetPlayerAsDeadByGUID`
+- L102 [assigned function] `HC.ConvertLastOnlineHoursToTimestamp`
+- L115 [assigned function] `HC.ExportDeathTag`
+- L199 [assigned function] `HC.ReportDeathToLog`
+- L219 [assigned function] `HC.GatherAllDeaths`
+- L262 [assigned function] `HC.GetAllDeathsSorted`
+- L282 [assigned function] `GRM_UI.VerifyIfHCChannelsEnabled`
+
+### GRM_Hyperlinks.lua
+
+- L11 [assigned function] `HL.InitializeHyperlinks`
+- L31 [assigned function] `HL.GenerateHyperlink`
+- L54 [assigned function] `HL.HyperlinkClick`
+
+### GRM_Localization.lua
+
+- L87 [assigned function] `GRML.GetFontNameFromLocation`
+- L156 [assigned function] `GRM.ConfigureAlternativeSlashCommands`
+- L171 [assigned function] `GRML.SetNewLanguage`
+- L198 [assigned function] `GRML.SetFontModifier`
+- L230 [assigned function] `GRML.SetNewFont`
+- L242 [assigned function] `GRML.GetFontChoiceIndex`
+- L275 [assigned function] `GRML.GetNumberUntranslatedLines`
+- L291 [assigned function] `LOC.ReprocessStrings`
+
+### GRM_Log.lua
+
+- L12 [assigned function] `Log.AddPromotionDateTempLogEntry`
+- L21 [assigned function] `Log.AddDemotionDateTempLogEntry`
+- L30 [assigned function] `Log.AddLeveledTempLogEntry`
+- L39 [assigned function] `Log.AddNoteTempLogEntry`
+- L47 [assigned function] `Log.AddOfficerNoteTempLogEntry`
+- L55 [assigned function] `Log.AddInactiveReturnTempLogEntry`
+- L63 [assigned function] `Log.AddNameChangeTempLogEntry`
+- L71 [assigned function] `Log.AddBanRejoinEntry`
+- L85 [assigned function] `Log.AddNormalRejoinEntry`
+- L100 [assigned function] `Log.AddJoinEntry`
+- L109 [assigned function] `Log.AddEventEntry`
+- L120 [assigned function] `Log.AddHardcoreDeathEntry`
+- L128 [assigned function] `Log.AddRankRenameEntry`
+- L136 [assigned function] `Log.AddEventRecommendKickTempLogEntry`
+- L144 [assigned function] `Log.AddEventRecommendPromotionLogEntry`
+- L153 [assigned function] `Log.AddEventRecommendDemotionLogEntry`
+- L161 [assigned function] `Log.AddEventRecommendSpecialLogEntry`
+- L169 [assigned function] `Log.AddLeftOrKickEntry`
+- L181 [assigned function] `Log.AddLog`
+
+### GRM_Macro_Tool.lua
+
+- L17 [assigned function] `GRM_UI.BuildSpcialRules`
+- L19 [assigned function] `GRM_Macro.SpecialRule1Button`
+- L54 [assigned function] `GRM_UI.SpecialRuleNameEditBox`
+- L67 [assigned function] `GRM_UI.SpecialRadialButtonSyncMainOption`
+- L95 [assigned function] `GRM_UI.BuildRankCheckBoxes`
+- L202 [assigned function] `GRM_UI.SetRankNamesToCustomRuleCheckButtons`
+- L238 [assigned function] `GRM_UI.UpdateDemoteOnlyText`
+- L249 [assigned function] `GRM_UI.PromoteOnlycheckBoxLogic`
+- L262 [assigned function] `GRM_UI.SpecialRankDropdownTT`
+- L270 [assigned function] `GRM_UI.GetListRanks`
+- L281 [assigned function] `GRM_UI.GetRankIndexDescendingOrder`
+- L294 [assigned function] `GRM_UI.SetSpecialDestinationSelection`
+- L310 [assigned function] `GRM_UI.ConfigureSpecialRankDropdownLimits`
+- L344 [assigned function] `GRM_UI.ConfigureSpecialRankCheckboxes`
+- L387 [assigned function] `GRM_UI.SpecialRadialButtonsRankSelection`
+- L401 [assigned function] `GRM_UI.SetDefaultSpecialRankFilters`
+- L422 [assigned function] `GRM_UI.SpecialRuleActivityFilter`
+- L432 [assigned function] `GRM_UI.SpecialtyActivityFilterFormat`
+- L453 [assigned function] `GRM_UI.SpecialRuleInactivityEditBox`
+- L465 [assigned function] `GRM_UI.DropDownToolTip`
+- L473 [assigned function] `GRM_UI.SpecialActivityDropDownSelection`
+- L487 [assigned function] `GRM_UI.SpecialRuleSyncOption`
+- L499 [assigned function] `GRM_UI.SpecialSyncCheckBoxFormat`
+- L529 [assigned function] `GRM_Macro.SpecialRuleConfirm`
+- L587 [assigned function] `GRM_Macro.SpecialRuleCancel`
+- L619 [assigned function] `GRM_UI.BuildMacroToolFrame`
+- L621 [assigned function] `GRM_Macro.EditHotKey`
+- L634 [assigned function] `GRM_UI.BuildHotKeyEditWindow`
+- L650 [assigned function] `GRM_Macro.ClearHotKey`
+- L657 [assigned function] `GRM_Macro.ConfirmHotKey`
+- L693 [assigned function] `GRM_Macro.AddShift`
+- L722 [assigned function] `GRM_Macro.AddControl`
+- L756 [assigned function] `GRM_Macro.HotKeyEditBoxTooltip`
+- L763 [assigned function] `GRM_Macro.UpdateWithFinalKey`
+- L1140 [assigned function] `GRM_R.SelectAllRuleLogic`
+- L1164 [assigned function] `GRM_UI.LoadAdditionalMacroToolFrames`
+- L1237 [assigned function] `GRM_UI.LoadToolFrames`
+- L1312 [assigned function] `GRM_Macro.CustomMessageToPlayerNote`
+- L2279 [assigned function] `GRM_UI.ConfigureToolTab`
+- L2522 [assigned function] `GRM_R.SetRuleCheckedStatus`
+- L2747 [assigned function] `GRM_UI.RuleNameEditBoxTT`
+- L3106 [assigned function] `GRM_UI.SetRankCustomRuleFilters`
+- L3137 [assigned function] `GRM_UI.SetDefaultRankFilters`
+- L3161 [assigned function] `GRM_UI.EnableEvenIfActiveButton`
+- L3172 [assigned function] `GRM_UI.DisableEvenIfActiveButton`
+- L3189 [assigned function] `GRM_UI.EnableCustomSelectionOfRanks`
+- L3202 [assigned function] `GRM_UI.DisableCustomSelectionRanks`
+- L3215 [assigned function] `GRM_UI.DisableLevelSelectionEditBoxes`
+- L3227 [assigned function] `GRM_UI.EnableLevelSelectionEditBoxes`
+- L3239 [assigned function] `GRM_UI.EnableRankActivityFrames`
+- L3259 [assigned function] `GRM_UI.DisableRankActivityFrames`
+- L3278 [assigned function] `GRM_UI.ConfigureRankCheckBoxesPromoteAndDemote`
+- L3340 [assigned function] `GRM_UI.ConfigureCustomRuleKickFrame`
+- L3780 [assigned function] `GRM_UI.ConfigureCustomRulePromoteAndDemoteFrame`
+- L4417 [assigned function] `GRM_UI.ConfigureCustomRulePromoteFrame`
+- L4421 [assigned function] `GRM_UI.ConfigureSpecialRuleFrame`
+- L4933 [assigned function] `GRM_UI.PopulateScaleSelectionDropDown`
+- L5002 [assigned function] `GRM_UI.PopularGuildOrRankDropDown`
+- L5203 [assigned function] `GRM_UI.PopulateActivityScaleSelectionDropDown`
+- L5514 [assigned function] `GRM.ConfigureSymbolSelected`
+- L5678 [assigned function] `GRM_UI.EnableNoteMatch`
+- L5693 [assigned function] `GRM_UI.DisableNoteMatch`
+- L5706 [assigned function] `GRM_UI.EnableNoteEditBox`
+- L5722 [assigned function] `GRM_UI.DisableNoteEditBox`
+- L5774 [assigned function] `GRM_UI.EnableSafeNoteMatch`
+- L5782 [assigned function] `GRM_UI.DisableSafeNoteMatch`
+- L5900 [assigned function] `GRM_UI.EnableCustomLogEntry`
+- L5905 [assigned function] `GRM_UI.DisableCustomLogEntry`
+- L5997 [assigned function] `GRM_UI.AddMessageToNoteAfterRankChange`
+- L6015 [assigned function] `GRM_UI.AddMessageToNoteOverwriteLogic`
+- L6024 [assigned function] `GRM_UI.AddMessageToNoteDestinationChoice`
+- L6034 [assigned function] `GRM_UI.SetMessageToNoteRadialConfig`
+- L6050 [assigned function] `GRM_UI.MessageToNoteOverwriteTT`
+- L6059 [assigned function] `GRM_UI.AddMessageToNoteEditBoxTT`
+- L6073 [assigned function] `GRM_UI.GRM_AddMessageToNoteCheckbox_Enable`
+- L6088 [assigned function] `GRM_UI.GRM_AddMessageToNoteCheckbox_Disable`
+- L6103 [assigned function] `GRM_UI.HideAllAddMessageToNote`
+- L6115 [assigned function] `GRM_UI.ShowAllAddMessageToNote`
+- L6210 [assigned function] `GRM_UI.SetDestinationSelection`
+- L6231 [assigned function] `GRM_UI.AdjustColoringOfDestinationRanks`
+- L6351 [assigned function] `GRM_UI.ModifyRuleUI`
+- L6463 [assigned function] `GRM_UI.LocalizationMModifications`
+- L6628 [assigned function] `GRM_UI.RefreshToolPermissionReport`
+- L6658 [assigned function] `GRM.BuildCustomKickEntries`
+- L6704 [assigned function] `GRM.BuildCustomPromoteEntries`
+- L6759 [assigned function] `GRM.BuildCustomDemoteEntries`
+- L6813 [assigned function] `GRM.StartQueuedEntriesScan`
+- L6870 [assigned function] `GRM.ProcessNextQueuedEntriesChunk`
+- L6917 [assigned function] `GRM.GetListOfQueuedNames`
+- L6930 [assigned function] `GRM.SetKickQueuedValues`
+- L6969 [assigned function] `GRM.KickQueuedHybridShiftDown`
+- L6998 [assigned function] `GRM.KickQueuedHybridShiftUp`
+- L7025 [assigned function] `GRM.KickQueuedSetLastValue`
+- L7032 [assigned function] `GRM.KickQueuedSetFirstValue`
+- L7039 [assigned function] `GRM.GetToolTipLine`
+- L7088 [assigned function] `GRM.UpdateQueuedTooltip`
+- L7180 [assigned function] `GRM.TriggerKickQueuedWindowRefresh`
+- L7192 [assigned function] `GRM.ClearQuedAndMacroFrames`
+- L7199 [assigned function] `GRM.DoBuildScrollFrameWithEntries`
+- L7302 [assigned function] `GRM.InitializeQuedScrollFrame`
+- L7328 [assigned function] `GRM.BuildKickQueuedScrollButtons`
+- L7398 [assigned function] `GRM.IsMouseStillOverAnyButton`
+- L7418 [assigned function] `GRM.IsAnyMacroHighlighted`
+- L7435 [assigned function] `GRM.SetMacroButtonText`
+- L7455 [assigned function] `GRM.IsNameBlacklisted`
+- L7471 [assigned function] `GRM.GetMacroEntries`
+- L7542 [assigned function] `GRM.GetMacroCountForPromoteAndDemote`
+- L7634 [assigned function] `GRM.IsMacroActionComplete`
+- L7648 [assigned function] `GRM.PurgeMacrodNames`
+- L7673 [assigned function] `GRM.ValidateMacroRecordingSuccess`
+- L7716 [assigned function] `GRM.SetMacroValues`
+- L7740 [assigned function] `GRM.KickMacrodHybridShiftDown`
+- L7781 [assigned function] `GRM.KickMacrodHybridShiftUp`
+- L7821 [assigned function] `GRM.KickMacrodSetLastValue`
+- L7828 [assigned function] `GRM.KickMacrodSetFirstValue`
+- L7835 [assigned function] `GRM.UpdateMacrodTooltip`
+- L7852 [assigned function] `GRM.RemoveNamesFromMacroEntries`
+- L7867 [assigned function] `GRM.RMM`
+- L7875 [assigned function] `GRM.BuildMacrodScrollFrame`
+- L7992 [assigned function] `GRM.GetHotKeyRecommendationScript`
+- L8008 [assigned function] `GRM.ResetToolMacrodHighlights`
+- L8023 [assigned function] `GRM.BuildKickMacrodScrollButtons`
+- L8120 [assigned function] `GRM.HowManySafeListsIsPlayerOn`
+- L8135 [assigned function] `GRM.IsAnyIgnoredHighlighted`
+- L8152 [assigned function] `GRM.SetIgnoredButtonText`
+- L8185 [assigned function] `GRM.ResetIgnoredHighlights`
+- L8200 [assigned function] `GRM.GetIgnoredEntries`
+- L8224 [assigned function] `GRM.RemoveHighlightedPlayersFromIgnoredList`
+- L8265 [assigned function] `GRM.ClearAllPlayersFromIgnoreList`
+- L8305 [assigned function] `GRM.GetNumIgnored`
+- L8324 [assigned function] `GRM.IsAnyIgnored`
+- L8344 [assigned function] `GRM.GetOnlySafePlayersWithIgnoredAction`
+- L8362 [assigned function] `GRM.SetIgnoredValues`
+- L8391 [assigned function] `GRM.IgnoredHybridShiftDown`
+- L8433 [assigned function] `GRM.IgnoredHybridShiftUp`
+- L8473 [assigned function] `GRM.IgnoredSetLastValue`
+- L8480 [assigned function] `GRM.IgnoredSetFirstValue`
+- L8487 [assigned function] `GRM.UpdateIgnoredToolTip`
+- L8548 [assigned function] `GRM.TriggerIgnoredQueuedWindowRefresh`
+- L8566 [assigned function] `GRM.BuildIgnoredScrollFrame`
+- L8644 [assigned function] `GRM.BuildIgnoredScrollButtons`
+- L8730 [assigned function] `GRM.GetRulesCount`
+- L8747 [assigned function] `GRM.RemoveRuleButtonLogic`
+- L8762 [assigned function] `GRM.AdjustRuleNumbers`
+- L8787 [assigned function] `GRM.GetKickRule`
+- L8794 [assigned function] `GRM.GetPromoteRule`
+- L8801 [assigned function] `GRM.GetDemoteRule`
+- L8808 [assigned function] `GRM_Macro.GetSpecialRule`
+- L8815 [assigned function] `GRM.ChangeRuleName`
+- L8824 [assigned function] `GRM_Macro.GetMacroRuleGUID`
+- L8831 [assigned function] `GRM.BuildNewKickRuleTemplate`
+- L8904 [assigned function] `GRM.BuildNewPromoteOrDemoteRuleTemplate`
+- L8994 [assigned function] `GRM_Macro.BuildNewSpecialRuleTemplate`
+- L9048 [assigned function] `GRM.ValidateRule`
+- L9078 [assigned function] `GRM.RuleIntegrityCheck`
+- L9089 [assigned function] `GRM.IsAnyInTableEnabled`
+- L9102 [assigned function] `GRM.AreAllEnabled`
+- L9112 [assigned function] `GRM.IsRuleReady`
+- L9155 [assigned function] `GRM_UI.IsSpecialRuleReady`
+- L9182 [assigned function] `GRM.RulesIntegrityCheck`
+- L9193 [assigned function] `GRM.GetRuleEntries`
+- L9228 [assigned function] `GRM.ClearRuleHighlights`
+- L9238 [assigned function] `GRM.ClearRuleHighlightsButGiven`
+- L9253 [assigned function] `GRM.IsRuleHighlighted`
+- L9272 [assigned function] `GRM.ShiftRuleUp`
+- L9298 [assigned function] `GRM.ShiftRuleDown`
+- L9324 [assigned function] `GRM_UI.GetRankRestrictionReport`
+- L9349 [assigned function] `GRM.BuildRuleButtons`
+- L9572 [assigned function] `GRM.BuildRulesScrollFrame`
+- L9668 [assigned function] `GRM.SetRuleValues`
+- L9707 [assigned function] `GRM.KickRulesHybridShiftDown`
+- L9755 [assigned function] `GRM.KickRulesHybridShiftUp`
+- L9801 [assigned function] `GRM.KickRulesSetLastValue`
+- L9808 [assigned function] `GRM.KickRulesSetFirstValue`
+- L9815 [assigned function] `GRM.GetRanksIncludedInFilter`
+- L9833 [assigned function] `GRM.UpdateRulesTooltip`
+- L10041 [assigned function] `GRM.UpdateSpecialRulesTooltip`
+- L10123 [assigned function] `GRM.HasTimeExceededDate`
+- L10135 [assigned function] `GRM.GetSingularOrPluralFormattingForMacroToolMsg`
+- L10162 [assigned function] `GRM.GetToolTipMessageForInGuildMessage`
+- L10553 [assigned function] `GRM_UI.GetYourOwnAltHighestRank`
+- L10604 [assigned function] `GRM_UI.PlayerCanBeMoved`
+- L10631 [assigned function] `GRM.GetKickNamesByFilterRulesChunk`
+- L10651 [local function] `GetOrAddPlayerRecEntry`
+- L10881 [assigned function] `GRM.GetPromoteAndDemoteNamesByFilterRulesChunk`
+- L10898 [local function] `GetOrAddPlayerRecEntry`
+- L11181 [assigned function] `GRM_UI.GetNamesBySpecialRulesChunk`
+- L11198 [local function] `CreateRecommendationEntry`
+- L11217 [local function] `GetPlayerAltGroupInfo`
+- L11354 [assigned function] `GRM.GetKickNamesByFilterRules`
+- L11666 [assigned function] `GRM.GetPromoteAndDemoteNamesByFilterRules`
+- L12018 [assigned function] `GRM_UI.GetNamesBySpecialRules`
+- L12166 [assigned function] `GRM_Macro.GetJumpsMsg`
+- L12189 [assigned function] `GRM_Macro.GetFullDatabaseAltsWithMain`
+- L12224 [assigned function] `GRM.SortAltsUnderMain`
+- L12323 [assigned function] `GRM.RefreshAllMacroToolFrames`
+- L12336 [assigned function] `GRM.GetSafePlayers`
+- L12365 [assigned function] `GRM.GetReasonIgnoredMsg`
+- L12383 [assigned function] `GRM.GetHigherRankCountMessage`
+- L12417 [assigned function] `GRM.RefreshMacroToolRuleCount`
+- L12486 [assigned function] `GRM.GetCountOfNamesBeingFilteredScan`
+- L12551 [assigned function] `GRM.ProcessNextCountingChunk`
+- L12557 [local function] `advanceCategory`
+- L12685 [assigned function] `GRM.RuleCountsFrameHandler`
+- L12698 [assigned function] `GRM.GetCachedRuleCounts`
+- L12724 [assigned function] `GRM_UI.UpdateToolButtonText`
+- L12750 [assigned function] `GRM_UI.RefreshToolButtonsOnUpdate_Async`
+- L12790 [assigned function] `GRM_UI.InitializeToolsUI`
+- L12809 [assigned function] `GRM_UI.RefreshManagementTool`
+- L12828 [assigned function] `GRM_UI.RefreshManagementToolDelay`
+- L12851 [assigned function] `GRM_UI.NonAsyncRefresh`
+- L12866 [assigned function] `GRM_UI.LoadRulesUI`
+- L12874 [assigned function] `GRM_UI.FullMacroToolRefresh`
+- L14176 [assigned function] `GRM.BuildMacroSyncTooltip`
+
+### GRM_Minimap.lua
+
+- L18 [assigned function] `MinimapGRM.MainWindowOpenLogic`
+- L51 [assigned function] `MinimapGRM.MinimapOnEnter`
+- L95 [assigned function] `MinimapGRM.CreateMiniMapWithLibDataBroker`
+- L112 [assigned function] `MinimapGRM.UpdateMinimapLabel`
+- L136 [assigned function] `MinimapGRM.CreateCustomMinimapButton`
+- L158 [assigned function] `MinimapGRM.CustomMinimapUpdatePos`
+- L191 [assigned function] `MinimapGRM.ResetMinimapPositionToDefault`
+- L203 [assigned function] `MinimapGRM.CustomMinimapDuringDrag`
+- L221 [assigned function] `MinimapGRM.CustomMinimapDuringDrag`
+- L321 [assigned function] `MinimapGRM.GRM_MinimapButtonInit`
+- L358 [assigned function] `MinimapGRM.Hide`
+- L367 [assigned function] `MinimapGRM.Show`
+- L376 [assigned function] `MinimapGRM.SetSelectedMinimap`
+
+### GRM_Modules.lua
+
+- L6 [assigned function] `GRM_M.CreateModule`
+- L20 [assigned function] `GRM_M.AddModuleSetting`
+
+### GRM_Nicknames.lua
+
+- L13 [assigned function] `NN.CreateNickObject`
+- L26 [assigned function] `NN.GetNickname`
+- L50 [assigned function] `NN.SetNickname`
+- L122 [assigned function] `NN.RemoveNickname`
+- L185 [assigned function] `NN.IsNicknameFormatValid`
+- L234 [assigned function] `NN.NickNamesSync`
+
+### GRM_Patches.lua
+
+- L19 [assigned function] `GRM_Patch.SettingsCheck`
+- L1881 [assigned function] `GRM_Patch.FinalizeReportPatches`
+- L1929 [assigned function] `GRM_Patch.AddMemberSpecificData`
+- L1970 [assigned function] `GRM_Patch.ModifyMemberSpecificData`
+- L2029 [assigned function] `GRM_Patch.AddOrEditNewMacroSetting`
+- L2043 [assigned function] `GRM_Patch.AddNewSetting`
+- L2061 [assigned function] `GRM_Patch.EditSetting`
+- L2090 [assigned function] `GRM_Patch.ModifyOrAddMacroRuleSetting`
+- L2116 [assigned function] `GRM_Patch.ManageOldSettingsDB`
+- L2233 [assigned function] `GRM_Patch.ModifyPlayerSetting`
+- L2261 [assigned function] `GRM_Patch.ModifyOrAddMacroRuleSetting`
+- L2284 [assigned function] `GRM_Patch.AddPlayerSetting`
+- L2300 [assigned function] `GRM_Patch.PlayerSettingsIntegrityCheck`
+- L2324 [assigned function] `GRM_Patch.FixClassIncompatibilityBuild`
+- L2338 [assigned function] `GRM_Patch.RemoveMacroInClassic`
+- L2349 [assigned function] `GRM.TimeStampToEpoch`
+- L2425 [assigned function] `GRM_Patch.SetupAltTracking`
+- L2452 [assigned function] `GRM_Patch.UpdateRankControlSettingDefault`
+- L2473 [assigned function] `GRM_Patch.ExpandOptions`
+- L2490 [assigned function] `GRM_Patch.IntroduceUnknown`
+- L2516 [assigned function] `GRM_Patch.RemoveRepeats`
+- L2542 [assigned function] `GRM_Patch.EstablishThrottleSlider`
+- L2552 [assigned function] `GRM_Patch.ExpandOptionsScalable`
+- L2575 [assigned function] `GRM_Patch.SetMinimapValues`
+- L2586 [assigned function] `GRM_Patch.CleanupSettings`
+- L2600 [assigned function] `GRM_Patch.CleanupPromoDatesOrig`
+- L2639 [assigned function] `GRM_Patch.TurnOffDefaultSyncSettingsOption`
+- L2649 [assigned function] `GRM_Patch.ResetSyncThrottle`
+- L2659 [assigned function] `GRM_Patch.ResetCreationDates`
+- L2708 [assigned function] `GRM_Patch.CleanupLeftPlayersDatabaseOfRepeats`
+- L2732 [assigned function] `GRM_Patch.CleanupGuildNames`
+- L2776 [assigned function] `GRM_Patch.AddAutoBackupIndex`
+- L2790 [assigned function] `GRM_Patch.ConfigureAutoBackupSettings`
+- L2802 [assigned function] `GRM_Patch.ResetAllBackupsPatch`
+- L2819 [assigned function] `GRM_Patch.CleanupPromoDates`
+- L2846 [assigned function] `GRM_Patch.ExpandOptionsType`
+- L2885 [assigned function] `GRM_Patch.ModifyNewDefaultSetting`
+- L2918 [assigned function] `GRM_Patch.FixBrokenLanguageIndex`
+- L2955 [assigned function] `GRM_Patch.SetProperFontIndex`
+- L2970 [assigned function] `GRM_Patch.ConfigureMiscForPlayer`
+- L2986 [assigned function] `GRM_Patch.SetMiscConfiguration`
+- L3003 [assigned function] `GRM_Patch.ModifyPlayerMetadata`
+- L3057 [assigned function] `GRM_Patch.AddPlayerMetaDataSlot`
+- L3118 [assigned function] `GRM_Patch.AddNewDefaultSetting`
+- L3134 [assigned function] `GRM_Patch.SetProperRankRestrictions`
+- L3155 [assigned function] `GRM_Patch.FixAltData`
+- L3199 [assigned function] `GRM_Patch.RemoveGuildBackup`
+- L3294 [assigned function] `GRM_Patch.RemoveAllAutoBackups`
+- L3316 [assigned function] `GRM_Patch.CleanupAnniversaryEvents`
+- L3348 [assigned function] `GRM_Patch.RemoveTitlesEventDataAndUpdateBirthday`
+- L3383 [assigned function] `GRM_Patch.UpdateCalendarEventsDatabase`
+- L3398 [assigned function] `GRM_Patch.MatchLanguageTo24HrFormat`
+- L3413 [assigned function] `GRM_Patch.FixBanListNameGrammar`
+- L3431 [assigned function] `GRM_Patch.RemoveDouble`
+- L3457 [assigned function] `GRM_Patch.FixDoubleCopiesOfData`
+- L3470 [assigned function] `GRM_Patch.FixDoubleCopiesInLeftPLayers`
+- L3477 [assigned function] `GRM_Patch.FixDoubleCopiesInCurrentGuilds`
+- L3484 [assigned function] `GRM_Patch.FixDoubleCopiesInBackup`
+- L3521 [assigned function] `GRM_Patch.RemoveAltCopies`
+- L3540 [assigned function] `GRM_Patch.DoAltListIntegrityCheckAndCleanup`
+- L3559 [assigned function] `GRM_Patch.FixPlayerListOfAltsDatabase`
+- L3652 [assigned function] `GRM_Patch.AddStreamViewMarker`
+- L3674 [assigned function] `GRM_Patch.PratCompatibilityCheck`
+- L3692 [assigned function] `GRM_Patch.ModifyNoteSavedSettings`
+- L3708 [assigned function] `GRM_Patch.LogDatabaseRepair`
+- L3724 [assigned function] `GRM_Patch.FixCustomMinimapPosition`
+- L3741 [assigned function] `GRM_Patch.ConvertLeaderNoteControlFormatToGuildInfo`
+- L3836 [assigned function] `GRM_Patch.ConvertGenericTimestampToIntValues`
+- L3852 [assigned function] `GRM_Patch.ConvertAndModifyAnniversaryStorageFormat`
+- L3926 [assigned function] `GRM_Patch.EventDatabaseIntegrityCheckAndRebuild`
+- L3939 [assigned function] `GRM_Patch.AltListRepeatAndSelfCleanup`
+- L4032 [assigned function] `GRM_Patch.FixEventCalendarAdvanceScanTimeFrame`
+- L4046 [assigned function] `GRM_Patch.CleanupErroneousSlashesInBanNames`
+- L4062 [assigned function] `GRM_Patch.AddBanSlotIndex`
+- L4108 [assigned function] `GRM_Patch.FixUnknownPromoShowing`
+- L4157 [assigned function] `GRM_Patch.ConvertEmptyGUID`
+- L4205 [assigned function] `GRM_Patch.FixLeftPlayersClassToUppercase`
+- L4244 [assigned function] `GRM_Patch.BuildGUIDProfilesForAllNoLongerInGuild`
+- L4258 [assigned function] `GRM_Patch.FixLogOfNilEntries`
+- L4289 [assigned function] `GRM_Patch.FixBanData`
+- L4336 [assigned function] `GRM_Patch.FixAltCopies`
+- L4354 [assigned function] `GRM_Patch.FixAltListsDatabaseWide`
+- L4401 [assigned function] `GRM_Patch.IntegrityCheckAndFixBdayAndAnniversaryEvents`
+- L4455 [assigned function] `GRM_Patch.SortDeepArrayInOrder`
+- L4467 [assigned function] `GRM_Patch.SortGuildRosterDeepArray`
+- L4501 [assigned function] `GRM_Patch.PlayerMetaDataDatabaseWideEdit`
+- L4558 [assigned function] `GRM_Patch.CleanUpAltLists`
+- L4580 [assigned function] `GRM_Patch.RemoveUnnecessaryHours`
+- L4591 [assigned function] `GRM_Patch.CleanupPromoDateSyncErrorForRejoins`
+- L4602 [assigned function] `GRM_Patch.CleanupPromoJoinDateOriginalTemplateDates`
+- L4634 [assigned function] `GRM_Patch.CleanupBirthdayRepeats`
+- L4660 [assigned function] `GRM_Patch.SlimBanReason`
+- L4675 [assigned function] `GRM_Patch.CleanupBanFormat`
+- L4689 [assigned function] `GRM_Patch.CleanupRemovedAlts`
+- L4721 [assigned function] `GRM_Patch.FinalAltListCleanup`
+- L4792 [assigned function] `GRM_Patch.CleanupCustomNoteError`
+- L4806 [assigned function] `GRM_Patch.SlimDate`
+- L4817 [assigned function] `GRM_Patch.CleanupJoinAndPromosSetUnknownError`
+- L4841 [assigned function] `GRM_Patch.CleanupPromoDateSituation`
+- L4857 [assigned function] `GRM_Patch.CleanupJoinDateError`
+- L4884 [assigned function] `GRM_Patch.CleanupJoinDateRepeats`
+- L4915 [assigned function] `GRM_Patch.GuildDataDatabaseWideEdit`
+- L4947 [assigned function] `GRM_Patch.RemoveOneAutoAndOneManualBackup`
+- L4968 [assigned function] `GRM_Patch.ConvertRecommendedKickDateToRule`
+- L5003 [assigned function] `GRM_Patch.CleanupPromotionDateMouseOverError`
+- L5017 [assigned function] `GRM_Patch.FixMonthDateRecommendationError`
+- L5031 [assigned function] `GRM_Patch.ClearExtraBackups`
+- L5048 [assigned function] `GRM_Patch.FixOptionsSetting`
+- L5073 [assigned function] `GRM_Patch.FixScalingOption`
+- L5092 [assigned function] `GRM_Patch.ExpandExportFilters`
+- L5107 [assigned function] `GRM_Patch.UpdateMinimumScanTime`
+- L5118 [assigned function] `GRM_Patch.RealignDatabaseDueToMisSort`
+- L5169 [assigned function] `GRM_Patch.FixAltGroupings`
+- L5242 [assigned function] `GRM_Patch.IsAnySettingsTooLow`
+- L5258 [assigned function] `GRM_Patch.GetDefaultAddonSettings`
+- L5359 [assigned function] `GRM_Patch.ConvertAddonSettings`
+- L5503 [assigned function] `GRM_Patch.CollectAllGuildNames`
+- L5542 [assigned function] `GRM_Patch.ConvertListOfAddonAlts`
+- L5585 [assigned function] `GRM_Patch.ConvertBackupDB`
+- L5718 [assigned function] `GRM_Patch.ConvertLogDB`
+- L5771 [assigned function] `GRM_Patch.ConvertMiscToNewDB`
+- L5793 [assigned function] `GRM_Patch.ConvertCalenderDB`
+- L5842 [assigned function] `GRM_Patch.ConvertPlayerMetaDataDB`
+- L5994 [assigned function] `GRM_Patch.ConvertBackupPlayerDataPreCheck`
+- L6009 [assigned function] `GRM_Patch.ConvertBackupPlayerData`
+- L6096 [assigned function] `GRM_Patch.FixNameChangePreReleaseBug`
+- L6129 [assigned function] `GRM_Patch.LegacyPurge`
+- L6143 [assigned function] `GRM_Patch.ModifyMemberData`
+- L6232 [assigned function] `GRM_Patch.ModifyGuildValue`
+- L6270 [assigned function] `GRM_Patch.AddMemberMetaData`
+- L6322 [assigned function] `GRM_Patch.AddVerifiedPromotionDatesToHistory`
+- L6345 [assigned function] `GRM_Patch.updateKickRules`
+- L6392 [assigned function] `GRM_Patch.fixAltGroups`
+- L6448 [assigned function] `GRM_Patch.VerifyMacroRuleIntegrity`
+- L6469 [assigned function] `GRM_Patch.FixManualBackupsFromDBLoad`
+- L6492 [assigned function] `GRM_Patch.AddGroupInfoModuleSettings`
+- L6507 [assigned function] `GRM_Patch.AddTextColoringValues`
+- L6532 [assigned function] `GRM_Patch.ModifyPlayerChannelToMulti`
+- L6546 [assigned function] `GRM_Patch.RemoveInvalidIndex`
+- L6560 [assigned function] `GRM_Patch.AddExportOptions`
+- L6591 [assigned function] `GRM_Patch.FixUnremovedData`
+- L6625 [assigned function] `GRM_Patch.FixMainTimestampError`
+- L6638 [assigned function] `GRM_Patch.AddKickRule`
+- L6682 [assigned function] `GRM_Patch.AdjustLevelCapDueToSquish`
+- L6693 [assigned function] `GRM_Patch.AddKickRuleOperator`
+- L6706 [assigned function] `GRM_Patch.AddRulesValue`
+- L6730 [assigned function] `GRM_Patch.ModifyKickRuleMaxLevel`
+- L6744 [assigned function] `GRM_Patch.ModifyKickRuleLogic`
+- L6758 [assigned function] `GRM_Patch.FixLogChangeRankEntries`
+- L6774 [assigned function] `GRM_Patch.FixMemberRemovePlayerData`
+- L6782 [assigned function] `GRM_Patch.ValidateUnverifiedDate`
+- L6842 [assigned function] `GRM_Patch.FixRankHistoryEpochDates`
+- L6862 [assigned function] `GRM_Patch.FixRankHistory`
+- L6876 [assigned function] `GRM_Patch.UpdateSafeListValue`
+- L6901 [assigned function] `GRM_Patch.FixVerifiedDatesForRejoins`
+- L6952 [assigned function] `GRM_Patch.PurgeGuildRankNamesOldFormat`
+- L6961 [assigned function] `GRM_Patch.CleanupSafeLists`
+- L6984 [assigned function] `GRM_Patch.ConfigureNewAltGroups`
+- L6996 [assigned function] `GRM_Patch.BuildNewAltLists`
+- L7086 [assigned function] `GRM_Patch.AddAltForPatch`
+- L7106 [assigned function] `GRM_Patch.RemoveOldAltLists`
+- L7115 [assigned function] `GRM_Patch.FixUnknownBirthdayBug`
+- L7164 [assigned function] `GRM_Patch.ConvertRankHistoryToRanks`
+- L7261 [assigned function] `GRM_Patch.UpdateUnknownRankFormat`
+- L7274 [assigned function] `GRM_Patch.ConvertJoinHistory`
+- L7338 [assigned function] `GRM_Patch.ConfigureRuleIndexAndEditTime`
+- L7360 [assigned function] `GRM_Patch.AddRemovedRules`
+- L7376 [assigned function] `GRM_Patch.FixTimestamps`
+- L7435 [assigned function] `GRM_Patch.PlayerNameFixFormerMembers`
+- L7469 [assigned function] `GRM_Patch.CreateMacroGUID`
+- L7480 [assigned function] `GRM_Patch.ConfigureNewGlobalDateFormat`
+- L7498 [assigned function] `GRM_Patch.FixIfGuildChange`
+- L7555 [assigned function] `GRM_Patch.FixMissingClass`
+- L7578 [assigned function] `GRM_Patch.UpdateYearFormatting`
+- L7598 [assigned function] `GRM_Patch.AltModifiedFix`
+- L7637 [assigned function] `GRM_Patch.PreviousAltGroupRejoinFix`
+- L7650 [assigned function] `GRM_Patch.JoinAndRankDataFix`
+- L7658 [assigned function] `GRM_Patch.ConvertSaveFiles`
+- L7727 [assigned function] `GRM_Patch.ConvertSettings`
+- L7749 [assigned function] `GRM_Patch.ConvertDatabase`
+- L7817 [assigned function] `GRM_Patch.ResetBackups`
+- L7850 [assigned function] `GRM_Patch.FixPersonWhoBanned`
+- L7867 [assigned function] `GRM_Patch.GuildDataIntegrityCheck`
+- L7936 [assigned function] `GRM_Patch.PurgeGuildFromDatabase`
+- L7977 [assigned function] `GRM_Patch.LanguageSettingModify`
+- L8002 [assigned function] `GRM_Patch.ResetUIScaling`
+- L8039 [assigned function] `GRM_Patch.CleanUpAltGroupsFromError`
+- L8081 [assigned function] `GRM_Patch.FixJoinNameError`
+- L8142 [assigned function] `GRM_Patch.AddExportEntry`
+- L8165 [assigned function] `GRM_Patch.AddFaction`
+- L8178 [assigned function] `GRM_Patch.FixMissingNames`
+- L8240 [assigned function] `GRM_Patch.FixSettingsNames`
+- L8257 [assigned function] `GRM_Patch.ConvertSettingsToNewFormat`
+- L8365 [assigned function] `GRM_Patch.DeleteLegacyMacro`
+- L8376 [assigned function] `GRM_Patch.ConvertExportFilters`
+- L8457 [assigned function] `GRM_Patch.UpdateUIScaling`
+- L8472 [assigned function] `GRM_Patch.FixAltGroupModified`
+- L8485 [assigned function] `GRM_Patch.ModifyJoinAndPromoteDates`
+- L8527 [assigned function] `GRM_Patch.UpdateRemovedMacro`
+- L8540 [assigned function] `GRM_Patch.FormatFixVerifiedTime`
+- L8569 [assigned function] `GRM_Patch.AddHardcoreVariables`
+- L8591 [assigned function] `GRM_Patch.CleanupIfPlayerRolledBack`
+- L8612 [assigned function] `GRM_Patch.FixStandardFormatAndRankHistFormat`
+- L8650 [assigned function] `GRM_Patch.AltGroupIntegrityCheck`
+- L8823 [assigned function] `GRM_Patch.ClearAllAltGroupsAndMainStatus`
+- L8876 [assigned function] `GRM_Patch.FixStandardStamp`
+- L8910 [assigned function] `GRM_Patch.FixHCModeData`
+- L8925 [assigned function] `GRM_Patch.UpdateLevelFilterSOD`
+- L8938 [assigned function] `GRM_Patch.CleanUpGroupInfo`
+- L8954 [assigned function] `GRM_Patch.FixWrathClassicEvokerBug`
+- L8967 [assigned function] `GRM_Patch.MarcoRuleDataConsistencyFix`
+- L8983 [assigned function] `GRM_Patch.FixMainTagColor`
+- L9002 [assigned function] `GRM_Patch.JoinDateErrorFix`
+- L9015 [assigned function] `GRM_Patch.FixAltGroupData`
+- L9044 [assigned function] `GRM_Patch.AddNewLevelFilters`
+- L9060 [assigned function] `GRM_Patch.FixRanKHistError`
+- L9076 [assigned function] `GRM_Patch.PlayerPromotedToOfficerNoteUpdate`
+- L9088 [assigned function] `GRM_Patch.BuildNewMainAltDB`
+- L9256 [assigned function] `GRM_Patch.ModifyCustomNote`
+- L9274 [assigned function] `GRM_Patch.AltGroupUpdateTweak`
+- L9429 [assigned function] `GRM_Patch.FixLegacyFormattingErrorOnRankAndJoinHist`
+- L9462 [assigned function] `GRM_Patch.ConvertHours`
+- L9488 [assigned function] `GRM_Patch.StandardDateFix`
+- L9580 [assigned function] `GRM_Patch.ConvertBackupDate`
+- L9597 [assigned function] `GRM_Patch.UpdateBdaySaveFormat`
+- L9615 [assigned function] `GRM_Patch.UpdateAnnivAndBdayFormat`
+- L9719 [assigned function] `GRM_Patch.FixMissingBday`
+- L9736 [assigned function] `GRM_Patch.AddNickNames`
+- L9752 [assigned function] `GRM_Patch.FixBirthdayUnknown`
+- L9851 [assigned function] `GRM_Patch.FixLeaveRejoinDateError`
+- L9877 [assigned function] `GRM_Patch.FixLastOnline`
+- L9893 [assigned function] `GRM_Patch.FixMissingMythicRating`
+- L9906 [assigned function] `GRM_Patch.RestructureBackupDB`
+- L9933 [assigned function] `GRM_Patch.FixMissingRankName`
+- L9946 [assigned function] `GRM_Patch.FixEventLog`
+- L9975 [assigned function] `GRM_Patch.FixLocalizationTimestampBug`
+- L10043 [assigned function] `GRM_Patch.FixBirthdayPostAnniversary`
+- L10110 [assigned function] `GRM_Patch.AltGroupUpdateTweakNewDB`
+- L10268 [assigned function] `GRM_Patch.AddNickNamesToPlayer`
+- L10278 [assigned function] `GRM_Patch.AddNickNamesToAltGroups`
+- L10303 [assigned function] `GRM_Patch.FixPotentialAltIssue`
+- L10400 [assigned function] `GRM_Patch.FixMaxLevelMacroSetting`
+- L10415 [assigned function] `GRM_Patch.AdjustMinimapRad`
+- L10430 [assigned function] `GRM_Patch.FixLegacyAltGroupData`
+
+### GRM_Professions.lua
+
+- L10 [assigned function] `Prof.GetProfessionTag`
+- L17 [assigned function] `Prof.GetProfessionNameByID`
+- L24 [assigned function] `Prof.GetProfessionIcon`
+- L31 [assigned function] `Prof.GetProfessionsNote`
+- L77 [assigned function] `Prof.RemoveAllProfessionNotes`
+- L94 [assigned function] `Prof.RemoveProfessionNote`
+- L146 [assigned function] `Prof.AppendProfessionReportToNote`
+- L260 [assigned function] `Prof.SetCustomNoteDirectly`
+- L276 [assigned function] `Prof.InitiateProfessionUpdate`
+- L319 [assigned function] `Prof.ReportProfChanges`
+- L347 [assigned function] `Prof.ReportPlayersNotUpdated`
+- L376 [assigned function] `Prof.AutoStartProfessionUpdate`
+
+### GRM_Realms.lua
+
+- L432 [assigned function] `GRM.GetRealmNames`
+
+### GRM_Roster.lua
+
+- L8 [assigned function] `GRM_R.BuildRosterFrames`
+- L28 [assigned function] `GRM_UI.RosterFrameSetScript`
+- L259 [assigned function] `GRM_R.ClearPlayerSearch`
+- L262 [assigned function] `GRM_R.ClearNoteSearch`
+- L298 [assigned function] `GRM_R.ResetColumnTextColors`
+- L311 [local function] `lookupValue`
+- L347 [assigned function] `GRM_R.IsOverAnyRankSelectionButtons`
+- L378 [assigned function] `GRM_R.BuildPromotionRankSelectionDropDown`
+- L410 [assigned function] `GRM_R.BuildDemotionRankSelectionDropDown`
+- L443 [assigned function] `GRM_R.RankSelection`
+- L455 [assigned function] `GRM_R.ConfigureMacroForRightClick`
+- L496 [assigned function] `GRM_R.PromotePlayer`
+- L511 [assigned function] `GRM_R.DemotePlayer`
+- L527 [assigned function] `GRM_R.KickPlayer`
+- L544 [assigned function] `GRM_R.RefreshOnlineStatus`
+- L574 [assigned function] `GRM_R.GetAllMembersAsArray`
+- L582 [assigned function] `addPlayer`
+- L706 [assigned function] `GRM_R.SortNames`
+- L771 [assigned function] `GRM_R.SortLastOnline`
+- L834 [assigned function] `GRM_R.SortMythicScore`
+- L899 [assigned function] `GRM_R.SortNote`
+- L964 [assigned function] `GRM_R.SortOfficerNote`
+- L1029 [assigned function] `GRM_R.SortCustomNote`
+- L1096 [assigned function] `GRM_R.SortRank`
+- L1203 [assigned function] `GRM_R.SortAlphabeticallyWithinRank`
+- L1237 [assigned function] `GRM_R.SortLastOnlineWithinRank`
+- L1271 [assigned function] `GRM_R.SortByLevelWithinRank`
+- L1305 [assigned function] `GRM_R.SortByMythicWithinRank`
+- L1339 [assigned function] `GRM_R.SortByNoteWithinRank`
+- L1373 [assigned function] `GRM_R.SortByOfficerNoteWithinRank`
+- L1407 [assigned function] `GRM_R.SortByCustomNoteWithinRank`
+- L1441 [assigned function] `GRM_R.SortLevel`
+- L1499 [assigned function] `GRM_R.RosterRightClickCancel`
+- L1506 [assigned function] `GRM_R.RosterRightClickWhisper`
+- L1517 [assigned function] `GRM_R.RefreshRosterName`
+- L1542 [assigned function] `GRM_R.BuildGuildRoster`
+- L1668 [assigned function] `GRM_R.BuildGuildRosterButtons`
+- L1955 [assigned function] `GRM_R.UpdateGuildRosterTooltip`
+- L1985 [assigned function] `GRM_R.UpdateNoteText`
+- L1999 [assigned function] `GRM_R.NameSearchTT`
+- L2009 [assigned function] `GRM_R.NoteSearchTT`
+- L2019 [assigned function] `GRM_R.TooltipReset`
+- L2026 [assigned function] `GRM_R.SetGuildRosterValues`
+- L2100 [assigned function] `GRM_R.RosterShiftDown`
+- L2157 [assigned function] `GRM_R.RosterShiftUp`
+- L2213 [assigned function] `GRM_R.RosterSetLastValue`
+- L2226 [assigned function] `GRM_R.RosterSetFirstValue`
+- L2238 [assigned function] `GRM_R.LoadRosterFrame`
+- L2281 [assigned function] `GRM_R.InitializeRosterLoadButton`
+- L2329 [assigned function] `GRM_R.ShowOfflineLogic`
+- L2345 [assigned function] `GRM_R.OpenRosterOptions`
+- L2362 [assigned function] `GRM_R.OpenRosterOptionsButtonTT`
+- L2378 [assigned function] `GRM_R.ShowMainsLogic`
+- L2399 [assigned function] `GRM_R.ShowAltsLogic`
+- L2415 [assigned function] `GRM_R.ShowMainTag`
+- L2427 [assigned function] `GRM_R.ShowAltTag`
+- L2439 [assigned function] `GRM_R.GroupByMainLogic`
+- L2457 [assigned function] `GRM_R.GroupByMainTT`
+- L2467 [assigned function] `GRM_R.NumRowsSliderLogic`
+- L2485 [assigned function] `GRM_R.NumRowsSliderTT`
+- L2495 [assigned function] `GRM_R.SliderMouseUpLogic`
+- L2507 [assigned function] `GRM_R.ConfigureRosterOptions`
+
+### GRM_SaveVar_API.lua
+
+- L40 [assigned function] `GRM.S`
+- L80 [assigned function] `GRM.GetPlayer`
+- L97 [assigned function] `GRM.GetFormerPlayer`
+- L114 [assigned function] `GRM.GetGuild`
+- L127 [assigned function] `GRM.GetFormerMembers`
+- L140 [assigned function] `GRM.GetLog`
+- L153 [assigned function] `GRM.GetEvents`
+- L166 [assigned function] `GRM.GetAddOnUserGuildAlts`
+- L179 [assigned function] `GRM.GetGuildAlts`
+- L190 [assigned function] `GRM.GetClubMemberInfo`
+- L219 [assigned function] `GRM.GetGuildRosterInfo_ClassicMethod`
+- L238 [assigned function] `GRM.GetMemberInfoWithFullName`
+- L254 [assigned function] `GRM.GetListOfGuildies`
+- L277 [assigned function] `GRM.GetIndexOfPlayerOnList`
+
+### GRM_ScanRoster.lua
+
+- L15 [assigned function] `Scan.NoLivecheck`
+- L33 [assigned function] `Scan.NoLiveReset`
+- L42 [assigned function] `Scan.LogPrecheck`
+- L69 [assigned function] `Scan.RosterPreCheck`
+- L102 [assigned function] `Scan.HeartbeatCheck`
+- L201 [assigned function] `Scan.BuildNewRoster`
+- L231 [assigned function] `Scan.CleanUpNameRepeatedServer`
+- L245 [assigned function] `Scan.RosterDiscrepancyPassed`
+- L263 [assigned function] `Scan.BuildRosterClassicMethod`
+- L425 [assigned function] `Scan.GetClubMemberTable`
+- L443 [assigned function] `Scan.GetGuildMemberIndexTable`
+- L457 [assigned function] `Scan.UpdateRosterWithCommunitiesAPI`
+- L547 [assigned function] `Scan.FinalizeRosterBuild`
+- L593 [assigned function] `Scan.BaseScanningComplete_MoveToChanges`
+- L621 [assigned function] `Scan.BuildNewGuildOrNameChange`
+- L712 [assigned function] `Scan.ProcessGuildNameChange`
+- L768 [assigned function] `Scan.GuildNameChanged`
+- L787 [assigned function] `Scan.GUID_EdgeCaseMatch`
+- L799 [assigned function] `Scan.processNewGUIDFormerMembers`
+- L837 [assigned function] `Scan.CheckPlayerChanges`
+- L935 [assigned function] `Scan.FinishedScan`
+- L956 [assigned function] `Scan.CheckLogChanges`
+- L1083 [assigned function] `Scan.CheckRosterChanges`
+- L1363 [assigned function] `Scan.CheckLogJoinOrLeave`
+- L1458 [assigned function] `Scan.RecordKickChanges`
+- L1659 [assigned function] `Scan.RecordChanges`
+- L1805 [assigned function] `Scan.RecordJoinChanges`
+- L2114 [assigned function] `Scan.IsRejoinAndSetDetails`
+- L2481 [assigned function] `Scan.CheckPlayerEvents`
+- L2529 [assigned function] `Scan.CheckPlayerAnniversary`
+- L2623 [assigned function] `Scan.CheckPlayerBirthday`
+- L2714 [assigned function] `Scan.FinalReport`
+- L2755 [assigned function] `Scan.FinalLeftPlayersReport`
+- L2856 [assigned function] `Scan.FinalReportInformation`
+- L2905 [assigned function] `Scan.AnnounceIfBirthday`
+- L2954 [assigned function] `Scan.CheckForDeadAccounts`
+- L3034 [assigned function] `Scan.FullReportCheck`
+- L3328 [assigned function] `Scan.ResetTempLogs`
+- L3353 [assigned function] `Scan.AnyReportsRemaining`
+- L3376 [assigned function] `Scan.ScanKillSwitch`
+- L3400 [assigned function] `Scan.AddonPlayerRankChange`
+- L3451 [assigned function] `Scan.GetNewerAccountByGUID`
+- L3475 [assigned function] `Scan.GetRuleNameMatches`
+- L3493 [assigned function] `Scan.ScanRecommendationsList_Async`
+- L3559 [assigned function] `Scan.ProcessNextMacroRuleChunk`
+- L3568 [local function] `getPlayerSafe`
+- L3573 [local function] `advanceToNextMajorStage`
+- L3585 [local function] `transitionToProcessingCandidates`
+- L3598 [local function] `transitionToClearingFlags`
+- L3978 [assigned function] `Scan.GetRuleNameMatchesChunk`
+- L3999 [assigned function] `Scan.RefreshNumberOfHoursTilRecommend`
+- L4112 [assigned function] `Scan.GetGuildEventString`
+- L4232 [assigned function] `Scan.SilenceOfficerNoteReport`
+- L4246 [assigned function] `Scan.GetMatureFilterNormalizedString`
+- L4265 [assigned function] `Scan.NormalizeMatureWords`
+
+### GRM_Stats.lua
+
+- L10 [assigned function] `GRM_API.CreateNewProgressBar`
+- L44 [assigned function] `GRM_API.TriggerProgressBar`
+- L143 [assigned function] `GRM_API.CheckPoint`
+- L163 [assigned function] `GRM_API.SetProgressBarColor`
+- L176 [assigned function] `GRM_API.ResetProgressBar`
+
+### GRM_TimeUtil.lua
+
+- L60 [assigned function] `Time.GetTodaysDate`
+- L75 [assigned function] `Time.GetCurrentCalendarTime`
+- L91 [assigned function] `Time.IsLeapYear`
+- L101 [assigned function] `Time.CalculateTotalHours`
+- L153 [assigned function] `Time.DaysInMonth`
+- L163 [assigned function] `Time.ConvertToStandardFormatDate`
+- L191 [assigned function] `Time.ParseStandardFormatDate`
+- L206 [assigned function] `Time.ConvertToEpoch`
+- L217 [assigned function] `Time.ValidateHist`
+- L233 [assigned function] `Time.GetTimestamp`
+- L245 [assigned function] `Time.GetTimePassedInZone`
+- L320 [assigned function] `Time.ConvertTimetableToServer`
+- L375 [assigned function] `Time.EpochToDateFormat`
+- L393 [assigned function] `Time.GetHoursSinceTimestamp`
+- L401 [assigned function] `Time.DayOfYear`
+- L416 [assigned function] `Time.GetDaysBetweenDates`
+- L446 [assigned function] `Time.GetTimePassedUsingTableOrString`
+- L559 [assigned function] `Time.GetTimePassedUsingEpochTime`
+- L575 [assigned function] `Time.GetTimePlayerHasBeenMember`
+- L591 [assigned function] `Time.ComplexHoursReport`
+- L797 [assigned function] `Time.HoursReport`
+- L855 [assigned function] `Time.GetNumDaysForNMonthsRule`
+- L927 [assigned function] `Time.GetNumHoursTilRecommend`
+- L943 [assigned function] `Time.GetTimestampBasedOnTimePassed`
+- L1024 [assigned function] `Time.GetCleanTimestamp`
+- L1032 [assigned function] `Time.FormatTimeStamp`
+- L1207 [assigned function] `Time.GetFormatTime`
+- L1248 [assigned function] `Time.GetTimestampOfLastRankChange`
+- L1261 [assigned function] `Time.IsValidSubmitDate`
+- L1309 [assigned function] `Time.GetLogFormattedTimestamp`
+
+### GRM_UI.lua
+
+- L1169 [assigned function] `GRM_UI.SetCloseButtonTooltip`
+- L1188 [assigned function] `GRM_UI.ScaleFontStringToObjectSize`
+- L1208 [assigned function] `GRM_UI.ReloadAllFrames`
+- L1325 [assigned function] `GRM_UI.SetTooltipScale`
+- L1338 [assigned function] `GRM_UI.RestoreTooltipScale`
+- L1346 [assigned function] `GRM_UI.NewTooltipScale`
+- L1363 [assigned function] `GRM_UI.CreateCharacterCountText`
+- L1428 [assigned function] `GRM_UI.Unpause`
+- L1448 [assigned function] `GRM_UI.GR_MetaDataInitializeUIFirst`
+- L1508 [assigned function] `GRM_UI.ConfigureAltNamesContextMenuSize`
+- L1529 [assigned function] `GRM_UI.ConfigureStatusContextMenuSize`
+- L1552 [assigned function] `GRM_UI.ConfigureDateContextMenuSize`
+- L1585 [assigned function] `GRM_UI.ConfigureRightClickPlayerNameWindow`
+- L1608 [assigned function] `GRM_UI.ConfigureStatusRightClickMenu`
+- L1645 [assigned function] `GRM_UI.ConfigurePromoteDateRightClickMenu`
+- L1712 [assigned function] `GRM_UI.ConfigureJoinDateRightClickMenu`
+- L1782 [assigned function] `GRM_UI.ConfigureBirthDayRightClickMenu`
+- L1946 [assigned function] `GRM_UI.ResetDeath`
+- L2713 [assigned function] `GRM_UI.ReconfigureNoteFonts`
+- L2790 [assigned function] `GRM_UI.PlayerPublicNoteEditBox`
+- L2907 [assigned function] `GRM_UI.EscapeOfficerNoteEditBox`
+- L2999 [assigned function] `GRM_UI.ReEnableSubIgnoreOption`
+- L3007 [assigned function] `GRM_UI.DisableSubIgnoreOption`
+- L3015 [assigned function] `GRM_UI.MacroIgnoreCheckBoxesFrame_OnShow`
+- L3202 [assigned function] `GRM_UI.MacroIgnoreCheckBoxesFrame_OnUpdate`
+- L3634 [assigned function] `GRM_UI.SetIgnoreCheckButtonTooltip`
+- L3697 [assigned function] `GRM_UI.SetAllMacroIgnoreFilters`
+- L3704 [assigned function] `GRM_UI.SyncAltsToSameIgnoreFilters`
+- L3775 [assigned function] `GRM_UI.ResetCustomNoteSyncTooltip`
+- L3978 [assigned function] `GRM_UI.CustomNoteEditBoxOnFocusLost`
+- L4009 [assigned function] `GRM_UI.GR_MetaDataInitializeUISecond`
+- L4085 [assigned function] `GRM_UI.AltMainSetButton`
+- L4578 [assigned function] `GRM_UI.GR_MetaDataInitializeUIThird`
+- L4639 [assigned function] `GRM_UI.AddAltButtonControls`
+- L4702 [assigned function] `GRM_UI.AddAltSelectionControls`
+- L4754 [assigned function] `GRM_UI.SetAddAltSliderValue`
+- L4768 [assigned function] `GRM_UI.AddAltSideFrameLogic`
+- L4816 [assigned function] `GRM_UI.SendFullAltGroup`
+- L4966 [assigned function] `GRM_UI.ConfirmPromoDate`
+- L4996 [assigned function] `GRM_UI.ConfirmJoinDate`
+- L5089 [assigned function] `GRM_UI.GetMacroCountMessage`
+- L5122 [assigned function] `GRM_UI.PreAddonLoadUI`
+- L5127 [assigned function] `GRM_UI.SaveCorePosition`
+- L5138 [assigned function] `GRM_UI.SaveToolPosition`
+- L5149 [assigned function] `GRM_UI.SaveSyncTrackerPosition`
+- L5160 [assigned function] `GRM_UI.CorePositionInit`
+- L5172 [assigned function] `GRM_UI.CoreToolPositionInit`
+- L5184 [assigned function] `GRM_UI.CoreSyncTrackerInit`
+- L5369 [assigned function] `GRM_UI.UpdateBanTabCurrentlyInGuild`
+- L5430 [assigned function] `GRM_UI.RefreshAuditTab`
+- L5527 [assigned function] `GRM_UI.MetaDataInitializeUIrosterLog1`
+- L5707 [assigned function] `GRM_UI.LogEditBoxTimingControl`
+- L5794 [assigned function] `GRM_UI.BuildAllSideFrameColorBoxes`
+- L5883 [assigned function] `GRM_UI.RefreshLogColorOptions`
+- L5897 [assigned function] `GRM_UI.UpdateLogFilterTextColor`
+- L6363 [assigned function] `GRM_UI.HardcoreTabClick`
+- L6377 [assigned function] `GRM_UI.NamesTabClick`
+- L6500 [assigned function] `GRM_UI.ChannelEnabled`
+- L6511 [assigned function] `GRM_UI.ConfigureHCOptions`
+- L6551 [assigned function] `GRM_UI.ConfigureHCDeathsChannelAccess`
+- L6567 [assigned function] `GRM_UI.HCtagCheckBoxScript`
+- L6583 [assigned function] `GRM_UI.HCtagTimeCheckBox`
+- L6607 [assigned function] `GRM_UI.ProfRankAutoUpdate`
+- L6633 [assigned function] `GRM_UI.ProfReportUpdatesToChat`
+- L6643 [assigned function] `GRM_UI.ProfNoteDestination`
+- L6648 [assigned function] `GRM_UI.ConfigureProfRadial`
+- L6677 [assigned function] `GRM_UI.ProfessionNoteUpdate`
+- L6684 [assigned function] `GRM_UI.ExportProfessionConfirm`
+- L6691 [assigned function] `cancel`
+- L6703 [assigned function] `GRM_UI.RemoveProfessionNotes`
+- L6716 [assigned function] `GRM_UI.ConfigureClassicProfessionOptions`
+- L6764 [assigned function] `GRM_UI.MainOrNicknameCheckButton`
+- L6772 [assigned function] `GRM_UI.GRM_ShowMainAltTagsButtonScript`
+- L6780 [assigned function] `GRM_UI.GRM_ShowNicknameButtonScript`
+- L6790 [assigned function] `GRM_UI.GRM_ShowNicknameInsteadButtonScript`
+- L6798 [assigned function] `GRM_UI.NicknameInsteadTT`
+- L6805 [assigned function] `GRM_UI.GRM_AppendNicknameScript`
+- L6813 [assigned function] `GRM_UI.GRM_ShareNicknameButtonScript`
+- L6821 [assigned function] `GRM_UI.UpdateTagOptionsText`
+- L6827 [assigned function] `GRM_UI.EnableNicknameOptions`
+- L6987 [assigned function] `GRM_UI.LoadModulesFrameOnShow`
+- L7451 [assigned function] `GRM_UI.ShowCustomColorPicker`
+- L7481 [assigned function] `GRM_UI.ColorPickScript`
+- L7513 [assigned function] `GRM_UI.ColorPickHideScript`
+- L7531 [assigned function] `GRM_UI.ColorPickerHide`
+- L7536 [assigned function] `GRM_UI.ColorPicker_OnShow`
+- L7640 [assigned function] `GRM_UI.ColorSelectFrameTextureUpdate`
+- L7936 [assigned function] `GRM_UI.ReportDestination`
+- L8820 [assigned function] `GRM_UI.DisableNoteDestinationButtons`
+- L8827 [assigned function] `GRM_UI.EnableNoteDestinationButtons`
+- L8834 [assigned function] `GRM_UI.AdjustTextColoring`
+- L8884 [assigned function] `GRM_UI.RadialButtonTooltipGlobalControlsConfig`
+- L9326 [assigned function] `GRM_UI.AllLevelFiltersOff`
+- L9337 [assigned function] `GRM_UI.SetLevelLogOptions`
+- L9951 [assigned function] `GRM_UI.EnableSyncUIChanges`
+- L10758 [assigned function] `GRM_UI.ConfigureLevelFilterButton`
+- L10894 [assigned function] `GRM_UI.ConfigureLevelFilterMaxTooltip`
+- L11000 [assigned function] `GRM_UI.MetaDataInitializeUIrosterLog2`
+- L11565 [assigned function] `GRM_UI.DeathsToLogButton`
+- L11575 [assigned function] `GRM_UI.DeathsToChatButton`
+- L11913 [assigned function] `GRM_UI.DefaultTabSelectLogic`
+- L12103 [assigned function] `GRM_UI.NameSearchTT`
+- L12160 [assigned function] `GRM_UI.TriggerRefreshAuditReset`
+- L12514 [assigned function] `GRM_UI.VerifyRankDatesScript`
+- L12523 [assigned function] `GRM_UI.VerifyJoinDatesScript`
+- L12532 [assigned function] `GRM_UI.VerifyDateTextChanged`
+- L12545 [assigned function] `GRM_UI.ConfirmVerifyOfDates`
+- L13164 [assigned function] `GRM_UI.ClearJDAuditHighlights`
+- L13431 [assigned function] `GRM_UI.BanFrameOnTextChanged`
+- L13435 [assigned function] `GRM_UI.RealmTextChanged`
+- L13528 [assigned function] `GRM_UI.CheckForBanPlayerAutoSelect`
+- L13658 [assigned function] `GRM_UI.RealmSelectionUpdateName`
+- L13714 [assigned function] `GRM_UI.TabNextDropDown`
+- L14094 [assigned function] `GRM_UI.SendBannedSyncMessage`
+- L14430 [assigned function] `GRM_UI.SendUnBanSyncMessage`
+- L14941 [assigned function] `GRM_UI.AltGroupingBorderFrame_OnShow`
+- L15111 [assigned function] `GRM_UI.ConfigureSelectAllCheckButtons`
+- L15139 [assigned function] `GRM_UI.BuildLogFilterSideFrame`
+- L15239 [assigned function] `GRM_UI.ConfigureJoinDateLocation`
+- L15279 [assigned function] `GRM_UI.BuildLogFrames`
+- L15869 [assigned function] `GRM_UI.RefreshLogExtraOptions`
+- L15942 [assigned function] `GRM_UI.ConfigureClassicRankShiftButtons`
+- L16022 [assigned function] `GRM_UI.RefreshShiftRankButtonPositions`
+- L16046 [assigned function] `GRM_UI.GetCurrentSelectedControlRank`
+- L16063 [assigned function] `GRM_UI.MainRoster_OnShow`
+- L16160 [assigned function] `GRM_UI.OnlineUsersTextUpdate`
+- L16180 [assigned function] `GRM_UI.BlizzardFramePinHookInitializations`
+- L16201 [assigned function] `GRM.FrameUpdateCommunities`
+- L16318 [assigned function] `GRM_UI.CommunitesFrame_OnShow`
+- L16334 [assigned function] `GRM_UI.InitalizeGuildFrame`
+- L16378 [assigned function] `GRM_UI.DefaultFramesRecursiveInit`
+- L16406 [assigned function] `GRM_UI.EstablishAsyncFrameRefreshFlag`
+- L16435 [assigned function] `GRM_UI.ActivateRefreshFlagSearch`
+- L16460 [assigned function] `GRM_UI.FrameRefreshFlagReady`
+- L16472 [assigned function] `GRM_UI.RefreshSelectFrames`
+- L16512 [assigned function] `GRM_UI.GetDefaultFrameSize`
+- L16537 [assigned function] `GRM_UI.ResetScalingForAll`
+- L16551 [assigned function] `GRM_UI.SaveScale`
+- L16571 [assigned function] `GRM_UI.RescaleFrame`
+- L16682 [assigned function] `GRM_UI.SetAllWindowScales`
+
+### GRM_UI_API.lua
+
+- L30 [assigned function] `GRM_UI.CreateCoreFrame`
+- L97 [assigned function] `GRM_UI.CreateString`
+- L139 [assigned function] `GRM_UI.CreateButton`
+- L220 [assigned function] `GRM_UI.CreateRadialButtons`
+- L305 [assigned function] `GRM_UI.CreateCheckBox`
+- L358 [assigned function] `GRM_UI.CreateHybridScrollFrame`
+- L416 [assigned function] `GRM_UI.CreateEditBox`
+- L554 [assigned function] `GRM_UI.CreateOptionsSlider`
+- L625 [assigned function] `GRM_UI.CreateDropDownMenu`
+- L737 [assigned function] `GRM_UI.BuildDropDownOptions`
+- L807 [assigned function] `GRM_UI.SaveFramePosition`
+- L824 [assigned function] `GRM_UI.GetBackdrop`
+- L882 [assigned function] `GRM_UI.CreateTooltipFromTable`
+- L932 [assigned function] `GRM_UI.CreateToolTipScript`
+- L992 [assigned function] `GRM_UI.GetCheckboxPinNumber`
+- L1013 [assigned function] `GRM_UI.ToBool`
+- L1032 [assigned function] `GRM_UI.GetFrame`
+- L1054 [assigned function] `GRM_UI.WrapText`
+- L1123 [assigned function] `GRM_UI.BuildSliderTextures`
+- L1195 [assigned function] `GRM_UI.ScaleButtonToFontStringSize`
+- L1212 [assigned function] `GRM.InitiateEditBoxPopup`
+
+### GRM_UI_Precheck.lua
+
+- L8 [assigned function] `UI_Pre.checkClassicUIRoster`
+- L27 [assigned function] `UI_Pre.EnableCommunities`
+
+### GRM_Util.lua
+
+- L7 [assigned function] `Util.TableLength`
+- L22 [assigned function] `Util.DeepCopyArray`
+- L39 [assigned function] `Util.RegisterGuildChatPermission`
+- L46 [local function] `CountTableElements`
+- L96 [assigned function] `Util.WarnTableSize`
+
+### GRM_WebApps.lua
+
+- L9 [assigned function] `WebApps.GetWebAppURL`
+
+### Italian.lua
+
+- L28 [assigned function] `GRML.Italian`
+
+### Korean.lua
+
+- L28 [assigned function] `GRML.Korean`
+
+### MandarinCN.lua
+
+- L28 [assigned function] `GRML.MandarinCN`
+
+### MandarinTW.lua
+
+- L28 [assigned function] `GRML.MandarinTW`
+
+### Portuguese.lua
+
+- L28 [assigned function] `GRML.Portuguese`
+
+### PortugueseBR.lua
+
+- L28 [assigned function] `GRML.PortugueseBR`
+
+### Russian.lua
+
+- L28 [assigned function] `GRML.Russian`
+
+### SpanishEU.lua
+
+- L28 [assigned function] `GRML.SpanishEU`
+
+### SpanishMX.lua
+
+- L28 [assigned function] `GRML.SpanishMX`
+
+## Funciones por archivo (GuildActivityTracker)
+
+### GuildActivityTracker/activity.lua
+
+- L5 [function] `GAT:SortBy`
+- L24 [function] `GAT:CreateTable`
+- L135 [function] `GAT:RefreshUI`
+- L284 [function] `GAT:ToggleUI`
+- L289 [function] `GAT:DisplayName`
+- L295 [local function] `FormatAgo`
+- L302 [function] `GAT:BuildRosterStatusText`
+- L314 [function] `GAT:StartAutoRosterRefresh`
+- L325 [function] `GAT:StopAutoRosterRefresh`
+- L329 [function] `GAT:OnUIShown`
+- L334 [function] `GAT:OnUIHidden`
+- L338 [function] `GAT:UpdateAutoRefreshFromSettings`
+
+### GuildActivityTracker/core.lua
+
+- L12 [function] `GAT:Color`
+- L18 [function] `GAT:Print`
+- L22 [function] `GAT:Now`
+- L26 [function] `GAT:IsMasterBuild`
+- L30 [function] `GAT:IsInTargetGuild`
+- L44 [local function] `initDB`
+- L58 [local function] `updatePlayerNames`
+- L66 [local function] `printGuildWarning`
+- L95 [assigned function] `SlashCmdList["GAT"]`
+
+### GuildActivityTracker/data.lua
+
+- L7 [local function] `getRealm`
+- L14 [local function] `canonicalName`
+- L20 [local function] `parseLastSeen`
+- L37 [local function] `lastSeenText`
+- L45 [function] `GAT:EnsureSyncDB`
+- L93 [function] `GAT:EnsureSortDefaults`
+- L105 [function] `GAT:UpgradeDBIfNeeded`
+- L131 [local function] `mergeDaily`
+- L140 [function] `GAT:MergeEntry`
+- L178 [function] `GAT:DeletePlayer`
+- L192 [function] `GAT:ScanRosterForRanks`
+- L217 [function] `GAT:AddActivity`
+- L256 [function] `GAT:GetSortedActivity`
+- L276 [local function] `nameKey`
+- L277 [local function] `onlineVal`
+- L281 [local function] `cmp`
+- L312 [function] `GAT:GetPlayerData`
+- L321 [function] `GAT:ResetData`
+- L325 [function] `GAT:ResetPlayer`
+- L333 [local function] `dateKeyToTS`
+- L341 [function] `GAT:RunAutoArchive`
+
+### GuildActivityTracker/events.lua
+
+- L12 [local function] `RequestGuildRosterRefresh`
+- L28 [function] `GAT:RebuildOnlineCache`
+- L46 [function] `GAT:IsOnline`
+- L55 [function] `GAT:GetRosterLastUpdateAt`
+- L64 [function] `GAT:RequestRosterSync`
+
+### GuildActivityTracker/export.lua
+
+- L5 [local function] `CleanCSV`
+- L10 [function] `GAT:ShowExportWindow`
+- L54 [function] `GAT:GenerateExportString`
+
+### GuildActivityTracker/filters_ui.lua
+
+- L4 [function] `GAT:CreateFiltersUI`
+- L51 [function] `GAT:RefreshFiltersUI`
+
+### GuildActivityTracker/graph.lua
+
+- L4 [function] `GAT:CreateGraphUI`
+- L23 [function] `GAT:RefreshGraph`
+
+### GuildActivityTracker/master.lua
+
+- L12 [local function] `EnsureSyncDB`
+- L18 [function] `GAT:IsHelpersView`
+- L23 [function] `GAT:SetHelpersView`
+- L35 [local function] `InstallListHook`
+- L40 [function] `GAT:GetSortedActivity`
+- L50 [local function] `InstallResetHook`
+- L54 [function] `GAT:ResetPlayer`
+- L64 [function] `GAT:InstallAdminButton`
+- L90 [local function] `HookUI`
+- L93 [function] `GAT:CreateMainWindow`
+- L102 [local function] `LateInstall`
+
+### GuildActivityTracker/minimap.lua
+
+- L7 [local function] `EnsureDB`
+- L18 [local function] `UpdateButtonPosition`
+- L32 [local function] `CreateMinimapButton`
+
+### GuildActivityTracker/options.lua
+
+- L8 [local function] `EnsureDefaults`
+- L17 [function] `GAT:CreateOptionsPanel`
+- L96 [function] `GAT:OpenOptions`
+
+### GuildActivityTracker/rank_presence.lua
+
+- L11 [local function] `Trim`
+- L16 [local function] `NormalizeKey`
+- L36 [local function] `Color`
+- L43 [local function] `ColorRank`
+- L56 [local function] `ExtractPlayerName`
+- L81 [local function] `ChatOut`
+- L92 [local function] `FindRankByShortName`
+- L125 [local function] `Announce`
+
+### GuildActivityTracker/stats.lua
+
+- L9 [function] `GAT:InitStats`
+- L45 [function] `GAT:ScheduleNextSnapshot`
+- L56 [function] `GAT:TakeActivitySnapshot`
+- L67 [local function] `SaveData`
+
+### GuildActivityTracker/sync.lua
+
+- L43 [local function] `ensureSyncDB`
+- L47 [local function] `now`
+- L51 [local function] `isInGuildScope`
+- L55 [local function] `safeCall`
+- L62 [local function] `safeSend`
+- L70 [local function] `pctEncode`
+- L77 [local function] `pctDecode`
+- L84 [local function] `parseLine`
+- L93 [local function] `hasValues`
+- L99 [local function] `queueOutbox`
+- L107 [local function] `outboxSize`
+- L115 [local function] `pumpOutbox`
+- L133 [function] `GAT:SysMsg`
+- L149 [local function] `resetSessionCache`
+- L154 [local function] `bumpRev`
+- L162 [local function] `encodeDaily`
+- L173 [local function] `decodeDaily`
+- L183 [local function] `splitN`
+- L200 [local function] `encodeDelta`
+- L228 [local function] `decodeDelta`
+- L272 [local function] `encodeSnapshot`
+- L306 [local function] `applyDelta`
+- L348 [local function] `applySnapshot`
+- L385 [local function] `computeHeader`
+- L396 [local function] `computeMaxPayload`
+- L402 [local function] `enqueuePayloadMessage`
+- L448 [local function] `markPeer`
+- L502 [local function] `prunePeers`
+- L528 [local function] `isDesignatedPusher`
+- L543 [local function] `flushLimboChat`
+- L560 [local function] `maybePushSnapshotToMaster`
+- L583 [local function] `computeRole`
+- L649 [local function] `getMasterPeer`
+- L658 [local function] `ensureIncoming`
+- L664 [local function] `incomingKey`
+- L668 [local function] `cleanupIncoming`
+- L680 [local function] `handleComplete`
+- L717 [local function] `onFragment`
+- L752 [local function] `sendHeartbeat`
+- L763 [local function] `flushPending`
+- L788 [local function] `trySendBacklog`
+- L823 [function] `GAT:Sync_SendSnapshotTo`
+- L842 [function] `GAT:Sync_BroadcastDelete`
+- L852 [function] `GAT:Sync_RecordDelta_Activity`
+- L876 [function] `GAT:Sync_RecordDelta_Stats`
+- L885 [function] `GAT:Sync_ShouldCollectChat`
+- L892 [function] `GAT:Sync_ShouldBufferChat`
+- L902 [function] `GAT:Sync_BufferChat`
+- L912 [function] `GAT:Sync_ShouldCollectStats`
+- L921 [function] `GAT:Sync_Manual`
+- L948 [function] `GAT:Sync_GetHelpersForUI`
+- L970 [function] `GAT:Sync_GetStatusLine`
+- L985 [local function] `onAddonMessage`
+- L1050 [function] `GAT:Sync_Init`
+
+### GuildActivityTracker/trends.lua
+
+- L4 [function] `GAT:CreateTrendsUI`
+- L23 [function] `GAT:RefreshTrends`
+
+### GuildActivityTracker/ui.lua
+
+- L4 [function] `GAT:ShowMissingPlayersWindow`
+- L38 [function] `GAT:RefreshMissingList`
+- L115 [function] `GAT:CreateMainWindow`
+
+### GuildActivityTracker/utils.lua
+
+- L5 [function] `GAT:Normalize`
+- L25 [function] `GAT:IsSelf`
+- L34 [function] `GAT:IsFiltered`
+
+
